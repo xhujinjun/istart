@@ -1,0 +1,33 @@
+
+<div>
+    <h2><span translate="istartApp.role.detail.title">Role</span> {{vm.role.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="istartApp.role.name">Name</dt></dt>
+        <dd>
+            <span>{{vm.role.name}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.role.description">Description</dt></dt>
+        <dd>
+            <span>{{vm.role.description}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.role.seq">Seq</dt></dt>
+        <dd>
+            <span>{{vm.role.seq}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.role.dataStatus">DataStatus</dt></dt>
+        <dd>
+            <span>{{vm.role.dataStatus}}<span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

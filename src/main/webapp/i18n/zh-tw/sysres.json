@@ -1,0 +1,25 @@
+{
+    "istartApp": {
+        "sysres" : {
+            "home": {
+                "title": "Sysres",
+                "createLabel": "Create a new Sysres",
+                "createOrEditLabel": "Create or edit a Sysres",
+                "search": "Search for Sysres"
+            },
+            "created": "A new Sysres is created with identifier {{ param }}",
+            "updated": "A Sysres is updated with identifier {{ param }}",
+            "deleted": "A Sysres is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Sysres {{ id }}?"
+            },
+            "detail": {
+                "title": "Sysres"
+            },
+            "name": "Name",
+            "type": "Type",
+            "url": "Url",
+            "resdesc": "Resdesc"
+        }
+    }
+}

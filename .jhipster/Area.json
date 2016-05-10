@@ -1,0 +1,52 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "areaid",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "parentid",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "parentname",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "level",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "isleaf",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "createDatetime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "modifiyDatetime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "DataStatus",
+            "fieldValues": "q"
+        }
+    ],
+    "changelogDate": "20160428153527",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "area",
+    "pagination": "pagination"
+}

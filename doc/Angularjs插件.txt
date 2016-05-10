@@ -1,0 +1,7 @@
+angular-marked:
+
+网站:https://github.com/Hypercubed/angular-marked
+例子：http://hypercubed.github.io/angular-marked/#/api
+
+angular-ueditor:
+http://git.oschina.net/inhu/angular-ueditor

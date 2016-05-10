@@ -1,0 +1,63 @@
+
+<div>
+    <h2><span translate="istartApp.area.detail.title">Area</span> {{vm.area.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="istartApp.area.areaid">Areaid</dt></dt>
+        <dd>
+            <span>{{vm.area.areaid}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.area.name">Name</dt></dt>
+        <dd>
+            <span>{{vm.area.name}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.area.parentid">Parentid</dt></dt>
+        <dd>
+            <span>{{vm.area.parentid}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.area.parentname">Parentname</dt></dt>
+        <dd>
+            <span>{{vm.area.parentname}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.area.addr">Addr</dt></dt>
+        <dd>
+            <span>{{vm.area.addr}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.area.level">Level</dt></dt>
+        <dd>
+            <span>{{vm.area.level}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.area.isleaf">Isleaf</dt></dt>
+        <dd>
+            <span>{{vm.area.isleaf}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.area.createDatetime">CreateDatetime</dt></dt>
+        <dd>
+            <span>{{vm.area.createDatetime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.area.modifiyDatetime">ModifiyDatetime</dt></dt>
+        <dd>
+            <span>{{vm.area.modifiyDatetime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.area.status">Status</dt></dt>
+        <dd>
+            <span translate="{{'istartApp.DataStatus.' + vm.area.status}}">{{vm.area.status}}</span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

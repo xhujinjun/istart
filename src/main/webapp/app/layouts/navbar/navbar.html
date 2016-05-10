@@ -1,0 +1,234 @@
+<!-- 导航 -->
+
+<!-- 开发环境标签 -->
+<div ng-show="{{ENV === 'dev'}}" class="development" ng-cloak></div>
+<div class="navbar-header  {{app.settings.navbarHeaderColor}}">
+	<button class="pull-right visible-xs dk" ui-toggle-class="show"
+		data-target=".navbar-collapse">
+		<i class="glyphicon glyphicon-cog"></i>
+	</button>
+	<button class="pull-right visible-xs" ui-toggle-class="off-screen"
+		data-target=".app-aside" ui-scroll="app">
+		<i class="glyphicon glyphicon-align-justify"></i>
+	</button>
+	<!-- brand -->
+	<a href="#/" class="navbar-brand text-lt"> <i class="fa fa-btc"></i>
+		<img src="content/images/logo.png" alt="." class="hide"> <span
+		class="hidden-folded m-l-xs">{{app.name}}</span>
+	</a>
+</div>
+<div class="collapse navbar-collapse" id="navbar-collapse"
+	uib-collapse="vm.navCollapsed" ng-switch="vm.isAuthenticated()">
+	<!-- buttons -->
+	<div class="nav navbar-nav hidden-xs">
+		<a href class="btn no-shadow navbar-btn"
+			ng-click="app.settings.asideFolded = !app.settings.asideFolded">
+			<i class="fa {{app.settings.asideFolded ? 'fa-indent' : 'fa-dedent'}} fa-fw"></i>
+		</a> <a href class="btn no-shadow navbar-btn" ui-toggle-class="show"
+			target="#aside-user"> <i class="icon-user fa-fw"></i>
+		</a>
+	</div>
+	<!-- / buttons -->
+
+	<!-- search form -->
+	<form class="navbar-form navbar-form-sm navbar-left shift"
+		ui-shift="prependTo" target=".navbar-collapse" role="search">
+		<div class="form-group">
+			<div class="input-group">
+				<input type="text" ng-model="selected"
+					typeahead="state for state in states | filter:$viewValue | limitTo:8"
+					class="form-control input-sm bg-light no-border rounded padder"
+					placeholder="Search projects..."> <span
+					class="input-group-btn">
+					<button type="submit" class="btn btn-sm bg-light rounded">
+						<i class="fa fa-search"></i>
+					</button>
+				</span>
+			</div>
+		</div>
+	</form>
+	<!-- / search form -->
+
+	<ul class="nav navbar-nav navbar-right">
+		<li class="hidden-xs"><a ui-fullscreen></a></li>
+		<li class="dropdown" uib-dropdown>
+            <a href class="dropdown-toggle" uib-dropdown-toggle>
+              <i class="icon-bell fa-fw"></i>
+              <span class="visible-xs-inline">Notifications</span>
+              <span class="badge badge-sm up bg-danger pull-right-xs">2</span>
+            </a>
+            <!-- dropdown -->
+            <div class="dropdown-menu w-xl animated fadeInUp">
+              <div class="panel bg-white">
+                <div class="panel-heading b-light bg-light">
+                  <strong>You have <span>2</span> notifications</strong>
+                </div>
+                <div class="list-group">
+                  <a href class="media list-group-item">
+                    <span class="pull-left thumb-sm">
+                      <img src="img/a0.jpg" alt="..." class="img-circle">
+                    </span>
+                    <span class="media-body block m-b-none">
+                      Use awesome animate.css<br>
+                      <small class="text-muted">10 minutes ago</small>
+                    </span>
+                  </a>
+                  <a href class="media list-group-item">
+                    <span class="media-body block m-b-none">
+                      1.0 initial released<br>
+                      <small class="text-muted">1 hour ago</small>
+                    </span>
+                  </a>
+                </div>
+                <div class="panel-footer text-sm">
+                  <a href class="pull-right"><i class="fa fa-cog"></i></a>
+                  <a href="#notes" data-toggle="class:show animated fadeInRight">See all the notifications</a>
+                </div>
+              </div>
+            </div>
+            <!-- / dropdown -->
+          </li>
+		<!-- jhipster-needle-add-element-to-menu - JHipster will add new menu items here -->
+		<li ng-class="{active: vm.$state.includes('entity')}"
+			ng-switch-when="true" uib-dropdown class="dropdown pointer"><a
+			class="dropdown-toggle" uib-dropdown-toggle href="" id="entity-menu">
+				<span> <span class="glyphicon glyphicon-th-list"></span> <span
+					class="hidden-sm" translate="global.menu.entities.main">
+						Entities </span> <b class="caret"></b>
+			</span>
+		</a>
+			<ul class="dropdown-menu" uib-dropdown-menu>
+				<li ui-sref-active="active"><a ui-sref="echarts"
+					data-toggle="collapse" data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-asterisk"></span> &#xA0;<span>echarts</span></a></li>
+				<li ui-sref-active="active"><a ui-sref="author"
+					data-toggle="collapse" data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-asterisk"></span> &#xA0;<span
+						translate="global.menu.entities.author">Author</span></a></li>
+				<li ui-sref-active="active"><a ui-sref="book"
+					data-toggle="collapse" data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-asterisk"></span> &#xA0;<span
+						translate="global.menu.entities.book">Book</span></a></li>
+				<li ui-sref-active="active"><a ui-sref="role"
+					data-toggle="collapse" data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-asterisk"></span> &#xA0;<span
+						translate="global.menu.entities.role">Role</span></a></li>
+				<li ui-sref-active="active"><a ui-sref="sysres"
+					data-toggle="collapse" data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-asterisk"></span> &#xA0;<span
+						translate="global.menu.entities.sysres">Sysres</span></a></li>
+				<li ui-sref-active="active"><a ui-sref="version"
+					data-toggle="collapse" data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-asterisk"></span> &#xA0;<span
+						translate="global.menu.entities.version">Version</span></a></li>
+<li ui-sref-active="active" ><a ui-sref="area" data-toggle="collapse" data-target=".navbar-collapse.in"><span class="glyphicon glyphicon-asterisk"></span>
+                        &#xA0;<span translate="global.menu.entities.area">Area</span></a></li>
+				<!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
+			</ul>
+		</li>
+		<li ng-class="{active: vm.$state.includes('account')}" uib-dropdown
+			class="dropdown pointer"><a class="dropdown-toggle"
+			uib-dropdown-toggle href="" id="account-menu"> <span> <span
+					class="glyphicon glyphicon-user"></span> <span class="hidden-sm"
+					translate="global.menu.account.main"> Account </span> <b
+					class="caret"></b>
+			</span>
+		</a>
+			<ul class="dropdown-menu" uib-dropdown-menu>
+				<li ui-sref-active="active" ng-switch-when="true"><a
+					ui-sref="settings" data-toggle="collapse"
+					data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-wrench"></span> &#xA0;<span
+						translate="global.menu.account.settings">Settings</span></a></li>
+				<li ui-sref-active="active" ng-switch-when="true"><a
+					ui-sref="password" data-toggle="collapse"
+					data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-lock"></span> &#xA0;<span
+						translate="global.menu.account.password">Password</span></a></li>
+				<li ui-sref-active="active" ng-switch-when="true"><a
+					ui-sref="sessions" data-toggle="collapse"
+					data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-cloud"></span> &#xA0;<span
+						translate="global.menu.account.sessions">Sessions</span></a></li>
+				<li ui-sref-active="active" ng-switch-when="true"><a href=""
+					ng-click="vm.logout()" id="logout" data-toggle="collapse"
+					data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-log-out"></span> &#xA0;<span
+						translate="global.menu.account.logout">Sign out</span></a></li>
+				<li ui-sref-active="active" ng-switch-when="false"><a href=""
+					ng-click="vm.login()" id="login" data-toggle="collapse"
+					data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-log-in"></span> &#xA0;<span
+						translate="global.menu.account.login">Sign in</span></a></li>
+				<li ui-sref-active="active" ng-switch-when="false"><a
+					ui-sref="register" data-toggle="collapse"
+					data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-plus-sign"></span> &#xA0;<span
+						translate="global.menu.account.register">Register</span></a></li>
+			</ul>
+		</li>
+		<li ng-class="{active: vm.$state.includes('admin')}"
+			ng-switch-when="true" has-authority="ROLE_ADMIN" uib-dropdown
+			class="dropdown pointer">
+			<a class="dropdown-toggle" uib-dropdown-toggle href="" id="admin-menu"> 
+			<span> 
+				<span class="glyphicon glyphicon-tower"></span> 
+				<span class="hidden-sm" translate="global.menu.admin.main">Administration</span> 
+				<b class="caret"></b>
+			</span>
+			</a>
+			<ul class="dropdown-menu" uib-dropdown-menu>
+				<li ui-sref-active="active"><a ui-sref="user-management"
+					data-toggle="collapse" data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-user"></span> &#xA0;<span
+						translate="global.menu.admin.userManagement">User
+							management</span></a></li>
+				<li ui-sref-active="active"><a ui-sref="jhi-tracker"
+					data-toggle="collapse" data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-eye-open"></span> &nbsp;<span
+						translate="global.menu.admin.tracker">User tracker</span></a></li>
+				<li ui-sref-active="active"><a ui-sref="jhi-metrics"
+					data-toggle="collapse" data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-dashboard"></span> &#xA0;<span
+						translate="global.menu.admin.metrics">Metrics</span></a></li>
+				<li ui-sref-active="active"><a ui-sref="jhi-health"
+					data-toggle="collapse" data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-heart"></span> &#xA0;<span
+						translate="global.menu.admin.health">Health</span></a></li>
+				<li ui-sref-active="active"><a ui-sref="jhi-configuration"
+					data-toggle="collapse" data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-list-alt"></span> &#xA0;<span
+						translate="global.menu.admin.configuration">Configuration</span></a></li>
+				<li ui-sref-active="active"><a ui-sref="audits"
+					data-toggle="collapse" data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-bell"></span> &#xA0;<span
+						translate="global.menu.admin.audits">Audits</span></a></li>
+				<li ui-sref-active="active"><a ui-sref="logs"
+					data-toggle="collapse" data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-tasks"></span> &#xA0;<span
+						translate="global.menu.admin.logs">Logs</span></a></li>
+				<li ng-hide="vm.inProduction" ui-sref-active="active"><a
+					ui-sref="docs" data-toggle="collapse"
+					data-target=".navbar-collapse.in"><span
+						class="glyphicon glyphicon-book"></span> &#xA0;<span
+						translate="global.menu.admin.apidocs">API</span></a></li>
+				<!-- jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here -->
+			</ul></li>
+		<li ui-sref-active="active" uib-dropdown class="dropdown pointer"
+			ng-controller="JhiLanguageController as languageVm"><a
+			class="dropdown-toggle" uib-dropdown-toggle href=""
+			ng-if="languageVm.languages.length > 1"> <span> <span
+					class="glyphicon glyphicon-flag"></span> <span class="hidden-sm"
+					translate="global.menu.language">Language</span> <b class="caret"></b>
+			</span>
+		</a>
+			<ul class="dropdown-menu" uib-dropdown-menu
+				ng-if="languageVm.languages.length > 1">
+				<li active-menu="{{language}}"
+					ng-repeat="language in languageVm.languages"><a href=""
+					ng-click="languageVm.changeLanguage(language)"
+					data-toggle="collapse" data-target=".navbar-collapse.in">{{language
+						| findLanguageFromKey}}</a></li>
+			</ul></li>
+	</ul>
+</div>

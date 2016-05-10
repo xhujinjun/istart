@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span translate="istartApp.book.detail.title">Book</span> {{vm.book.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="istartApp.book.title">Title</dt></dt>
+        <dd>
+            <span>{{vm.book.title}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.book.description">Description</dt></dt>
+        <dd>
+            <span>{{vm.book.description}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.book.publicationDate">PublicationDate</dt></dt>
+        <dd>
+            <span>{{vm.book.publicationDate | date:'mediumDate'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.book.price">Price</dt></dt>
+        <dd>
+            <span>{{vm.book.price}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.book.status">Status</dt></dt>
+        <dd>
+            <span>{{vm.book.status}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.book.author">author</span></dt>
+        <dd>
+            <a ui-sref="author-detail({id:vm.book.authorId})">{{vm.book.authorId}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

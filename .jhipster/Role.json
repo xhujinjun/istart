@@ -1,0 +1,33 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "minlength",
+                "maxlength"
+            ],
+            "fieldValidateRulesMinlength": 0,
+            "fieldValidateRulesMaxlength": "50"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "seq",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "dataStatus",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20160420055009",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "role",
+    "pagination": "pagination"
+}

@@ -1,0 +1,38 @@
+
+<div>
+    <h2><span translate="istartApp.version.detail.title">Version</span> {{vm.version.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="istartApp.version.name">Name</dt></dt>
+        <dd>
+            <span>{{vm.version.name}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.version.url">Url</dt></dt>
+        <dd>
+            <span>{{vm.version.url}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.version.deprecated">Deprecated</dt></dt>
+        <dd>
+            <span>{{vm.version.deprecated}}<span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.version.createTime">CreateTime</dt></dt>
+        <dd>
+            <span>{{vm.version.createTime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.version.description">Description</dt></dt>
+        <dd>
+            <span>{{vm.version.description}}<span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

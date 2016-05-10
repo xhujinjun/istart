@@ -1,0 +1,31 @@
+<div  class="hbox hbox-auto-xs hbox-auto-sm">
+    <div class="col">
+    <div class="wrapper-md">
+      <button class="btn btn-primary" ui-sref="sysres.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  translate="istartApp.sysres.home.createLabel">
+                        Create new Sysres
+                    </span>
+                </button>
+      <div class="b-a bg-light dk r r-2x">
+        <span ng-if="doing_async">...loading...</span>
+        <abn-tree 
+          tree-data         = "vm.my_data" 
+          tree-control      = "vm.my_tree" 
+          on-select         = "vm.my_tree_handler(branch)" 
+          expand-level      = "2" 
+          initial-selection = "Granny Smith"
+          icon-leaf         = "fa fa-file-o"
+          icon-expand       = "fa fa-plus"
+          icon-collapse     = "fa fa-minus"
+          >
+        </abn-tree>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="wrapper-md">
+      <div class="alert alert-info">{{vm.output}}</div>
+    </div>
+  </div>
+</div>

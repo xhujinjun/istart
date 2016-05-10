@@ -1,0 +1,26 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "url",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "resdesc",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160420064024",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "sysres",
+    "pagination": "pagination"
+}

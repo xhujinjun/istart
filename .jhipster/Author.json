@@ -1,0 +1,26 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "books",
+            "otherEntityName": "book",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "author"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "birthDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20160418163414",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "author",
+    "pagination": "pagination"
+}
