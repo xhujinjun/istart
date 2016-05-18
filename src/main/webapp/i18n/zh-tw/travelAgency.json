@@ -1,0 +1,27 @@
+{
+    "istartApp": {
+        "travelAgency" : {
+            "home": {
+                "title": "Travel Agencies",
+                "createLabel": "Create a new Travel Agency",
+                "createOrEditLabel": "Create or edit a Travel Agency",
+                "search": "Search for Travel Agency"
+            },
+            "created": "A new Travel Agency is created with identifier {{ param }}",
+            "updated": "A Travel Agency is updated with identifier {{ param }}",
+            "deleted": "A Travel Agency is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Travel Agency {{ id }}?"
+            },
+            "detail": {
+                "title": "Travel Agency"
+            },
+            "agencyCode": "Agency Code",
+            "agencyName": "Agency Name",
+            "agencyIntroduce": "Agency Introduce",
+            "addr": "Addr",
+            "buildDate": "Build Date",
+            "contactPhone": "Contact Phone"
+        }
+    }
+}

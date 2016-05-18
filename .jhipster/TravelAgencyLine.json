@@ -1,0 +1,55 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "travelAgencyId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "line_number",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lineName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "spotIntroduce",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lineDatetime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "lineCity",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataCreator",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "dataUpdater",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataCreateDatetime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataUpdateDatetime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataStatus",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160518165443",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "travel_agency_line",
+    "pagination": "pagination"
+}

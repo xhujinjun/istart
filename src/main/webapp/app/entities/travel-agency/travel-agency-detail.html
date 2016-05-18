@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span translate="istartApp.travelAgency.detail.title">Travel Agency</span> {{vm.travelAgency.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="istartApp.travelAgency.agencyCode">Agency Code</span></dt>
+        <dd>
+            <span>{{vm.travelAgency.agencyCode}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.travelAgency.agencyName">Agency Name</span></dt>
+        <dd>
+            <span>{{vm.travelAgency.agencyName}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.travelAgency.agencyIntroduce">Agency Introduce</span></dt>
+        <dd>
+            <span>{{vm.travelAgency.agencyIntroduce}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.travelAgency.addr">Addr</span></dt>
+        <dd>
+            <span>{{vm.travelAgency.addr}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.travelAgency.buildDate">Build Date</span></dt>
+        <dd>
+            <span>{{vm.travelAgency.buildDate | date:'mediumDate'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.travelAgency.contactPhone">Contact Phone</span></dt>
+        <dd>
+            <span>{{vm.travelAgency.contactPhone}}</span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

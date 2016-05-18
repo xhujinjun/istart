@@ -1,0 +1,32 @@
+{
+    "istartApp": {
+        "travelAgencyLine" : {
+            "home": {
+                "title": "旅行社线路发布",
+                "createLabel": "发布线路",
+                "createOrEditLabel": "发布或编辑线路",
+                "search": "检索线路"
+            },
+            "created": "A new Travel Agency Line is created with identifier {{ param }}",
+            "updated": "A Travel Agency Line is updated with identifier {{ param }}",
+            "deleted": "A Travel Agency Line is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Travel Agency Line {{ id }}?"
+            },
+            "detail": {
+                "title": "Travel Agency Line"
+            },
+            "travelAgencyId": "Travel Agency Id",
+            "line_number": "线路编号",
+            "lineName": "线路名称",
+            "spotIntroduce": "景点介绍",
+            "lineDatetime": "线路日期时间",
+            "lineCity": "线路城市",
+            "dataCreator": "数据创建者",
+            "dataUpdater": "数据更新者",
+            "dataCreateDatetime": "数据创建日期时间",
+            "dataUpdateDatetime": "数据更新日期时间",
+            "dataStatus": "数据状态"
+        }
+    }
+}

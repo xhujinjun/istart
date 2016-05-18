@@ -1,0 +1,32 @@
+{
+    "istartApp": {
+        "travelAgencyLine" : {
+            "home": {
+                "title": "Travel Agency Lines",
+                "createLabel": "Create a new Travel Agency Line",
+                "createOrEditLabel": "Create or edit a Travel Agency Line",
+                "search": "Search for Travel Agency Line"
+            },
+            "created": "A new Travel Agency Line is created with identifier {{ param }}",
+            "updated": "A Travel Agency Line is updated with identifier {{ param }}",
+            "deleted": "A Travel Agency Line is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Travel Agency Line {{ id }}?"
+            },
+            "detail": {
+                "title": "Travel Agency Line"
+            },
+            "travelAgencyId": "Travel Agency Id",
+            "line_number": "Line Number",
+            "lineName": "Line Name",
+            "spotIntroduce": "Spot Introduce",
+            "lineDatetime": "Line Datetime",
+            "lineCity": "Line City",
+            "dataCreator": "Data Creator",
+            "dataUpdater": "Data Updater",
+            "dataCreateDatetime": "Data Create Datetime",
+            "dataUpdateDatetime": "Data Update Datetime",
+            "dataStatus": "Data Status"
+        }
+    }
+}

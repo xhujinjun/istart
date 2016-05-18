@@ -1,0 +1,27 @@
+{
+    "istartApp": {
+        "travelAgency" : {
+            "home": {
+                "title": "旅行社管理",
+                "createLabel": "发布旅行社",
+                "createOrEditLabel": "发布或修改旅行社信息",
+                "search": "检索旅行社信息"
+            },
+            "created": "A new Travel Agency is created with identifier {{ param }}",
+            "updated": "A Travel Agency is updated with identifier {{ param }}",
+            "deleted": "A Travel Agency is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Travel Agency {{ id }}?"
+            },
+            "detail": {
+                "title": "旅行社信息"
+            },
+            "agencyCode": "旅行社编号",
+            "agencyName": "旅行社名称",
+            "agencyIntroduce": "旅行社介绍",
+            "addr": "旅行社地址",
+            "buildDate": "成立时间",
+            "contactPhone": "联系电话"
+        }
+    }
+}

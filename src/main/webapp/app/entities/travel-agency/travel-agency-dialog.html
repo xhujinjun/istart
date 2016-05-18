@@ -1,0 +1,66 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTravelAgencyLabel" translate="istartApp.travelAgency.home.createOrEditLabel">Create or edit a Travel Agency</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.travelAgency.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.travelAgency.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgency.agencyCode" for="field_agencyCode">Agency Code</label>
+            <input type="text" class="form-control" name="agencyCode" id="field_agencyCode"
+                    ng-model="vm.travelAgency.agencyCode"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgency.agencyName" for="field_agencyName">Agency Name</label>
+            <input type="text" class="form-control" name="agencyName" id="field_agencyName"
+                    ng-model="vm.travelAgency.agencyName"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgency.agencyIntroduce" for="field_agencyIntroduce">Agency Introduce</label>
+            <input type="text" class="form-control" name="agencyIntroduce" id="field_agencyIntroduce"
+                    ng-model="vm.travelAgency.agencyIntroduce"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgency.addr" for="field_addr">Addr</label>
+            <input type="text" class="form-control" name="addr" id="field_addr"
+                    ng-model="vm.travelAgency.addr"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgency.buildDate" for="field_buildDate">Build Date</label>
+                <div class="input-group">
+                    <input id="field_buildDate" type="text" class="form-control" name="buildDate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.travelAgency.buildDate" is-open="vm.datePickerOpenStatus.buildDate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('buildDate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgency.contactPhone" for="field_contactPhone">Contact Phone</label>
+            <input type="text" class="form-control" name="contactPhone" id="field_contactPhone"
+                    ng-model="vm.travelAgency.contactPhone"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

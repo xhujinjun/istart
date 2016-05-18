@@ -1,0 +1,34 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "agencyCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "agencyName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "agencyIntroduce",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "addr",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "buildDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "contactPhone",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160518153307",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "travel_agency",
+    "pagination": "pagination"
+}

@@ -1,0 +1,68 @@
+
+<div>
+    <h2><span translate="istartApp.travelAgencyLine.detail.title">Travel Agency Line</span> {{vm.travelAgencyLine.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="istartApp.travelAgencyLine.travelAgencyId">Travel Agency Id</span></dt>
+        <dd>
+            <span>{{vm.travelAgencyLine.travelAgencyId}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.travelAgencyLine.line_number">Line Number</span></dt>
+        <dd>
+            <span>{{vm.travelAgencyLine.line_number}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.travelAgencyLine.lineName">Line Name</span></dt>
+        <dd>
+            <span>{{vm.travelAgencyLine.lineName}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.travelAgencyLine.spotIntroduce">Spot Introduce</span></dt>
+        <dd>
+            <span>{{vm.travelAgencyLine.spotIntroduce}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.travelAgencyLine.lineDatetime">Line Datetime</span></dt>
+        <dd>
+            <span>{{vm.travelAgencyLine.lineDatetime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.travelAgencyLine.lineCity">Line City</span></dt>
+        <dd>
+            <span>{{vm.travelAgencyLine.lineCity}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.travelAgencyLine.dataCreator">Data Creator</span></dt>
+        <dd>
+            <span>{{vm.travelAgencyLine.dataCreator}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.travelAgencyLine.dataUpdater">Data Updater</span></dt>
+        <dd>
+            <span>{{vm.travelAgencyLine.dataUpdater}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.travelAgencyLine.dataCreateDatetime">Data Create Datetime</span></dt>
+        <dd>
+            <span>{{vm.travelAgencyLine.dataCreateDatetime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.travelAgencyLine.dataUpdateDatetime">Data Update Datetime</span></dt>
+        <dd>
+            <span>{{vm.travelAgencyLine.dataUpdateDatetime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.travelAgencyLine.dataStatus">Data Status</span></dt>
+        <dd>
+            <span>{{vm.travelAgencyLine.dataStatus}}</span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

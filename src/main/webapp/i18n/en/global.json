@@ -65,6 +65,8 @@
                 "sysres": "Sysres",
                 "version": "Version",
                 "area": "Area",
+                "travelAgency": "Travel Agency",
+                "travelAgencyLine": "Travel Agency Line",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

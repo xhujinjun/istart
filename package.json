@@ -9,7 +9,8 @@
   ],
   "dependencies": {
     "bower": "^1.6.3",
-    "echarts": "^3.1.6"
+    "echarts": "^3.1.6",
+    "gulp": "^3.9.1"
   },
   "devDependencies": {
     "browser-sync": "2.11.2",

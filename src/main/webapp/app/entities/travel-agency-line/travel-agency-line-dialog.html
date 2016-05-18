@@ -1,0 +1,104 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myTravelAgencyLineLabel" translate="istartApp.travelAgencyLine.home.createOrEditLabel">Create or edit a Travel Agency Line</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.travelAgencyLine.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.travelAgencyLine.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgencyLine.travelAgencyId" for="field_travelAgencyId">Travel Agency Id</label>
+            <input type="number" class="form-control" name="travelAgencyId" id="field_travelAgencyId"
+                    ng-model="vm.travelAgencyLine.travelAgencyId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgencyLine.line_number" for="field_line_number">Line Number</label>
+            <input type="text" class="form-control" name="line_number" id="field_line_number"
+                    ng-model="vm.travelAgencyLine.line_number"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgencyLine.lineName" for="field_lineName">Line Name</label>
+            <input type="text" class="form-control" name="lineName" id="field_lineName"
+                    ng-model="vm.travelAgencyLine.lineName"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgencyLine.spotIntroduce" for="field_spotIntroduce">Spot Introduce</label>
+            <input type="text" class="form-control" name="spotIntroduce" id="field_spotIntroduce"
+                    ng-model="vm.travelAgencyLine.spotIntroduce"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgencyLine.lineDatetime" for="field_lineDatetime">Line Datetime</label>
+                <div class="input-group">
+                    <input id="field_lineDatetime" type="text" class="form-control" name="lineDatetime" datetime-picker="{{dateformat}}" ng-model="vm.travelAgencyLine.lineDatetime" is-open="vm.datePickerOpenStatus.lineDatetime"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('lineDatetime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgencyLine.lineCity" for="field_lineCity">Line City</label>
+            <input type="text" class="form-control" name="lineCity" id="field_lineCity"
+                    ng-model="vm.travelAgencyLine.lineCity"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgencyLine.dataCreator" for="field_dataCreator">Data Creator</label>
+            <input type="text" class="form-control" name="dataCreator" id="field_dataCreator"
+                    ng-model="vm.travelAgencyLine.dataCreator"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgencyLine.dataUpdater" for="field_dataUpdater">Data Updater</label>
+            <input type="text" class="form-control" name="dataUpdater" id="field_dataUpdater"
+                    ng-model="vm.travelAgencyLine.dataUpdater"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgencyLine.dataCreateDatetime" for="field_dataCreateDatetime">Data Create Datetime</label>
+                <div class="input-group">
+                    <input id="field_dataCreateDatetime" type="text" class="form-control" name="dataCreateDatetime" datetime-picker="{{dateformat}}" ng-model="vm.travelAgencyLine.dataCreateDatetime" is-open="vm.datePickerOpenStatus.dataCreateDatetime"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataCreateDatetime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgencyLine.dataUpdateDatetime" for="field_dataUpdateDatetime">Data Update Datetime</label>
+                <div class="input-group">
+                    <input id="field_dataUpdateDatetime" type="text" class="form-control" name="dataUpdateDatetime" datetime-picker="{{dateformat}}" ng-model="vm.travelAgencyLine.dataUpdateDatetime" is-open="vm.datePickerOpenStatus.dataUpdateDatetime"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataUpdateDatetime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.travelAgencyLine.dataStatus" for="field_dataStatus">Data Status</label>
+            <input type="number" class="form-control" name="dataStatus" id="field_dataStatus"
+                    ng-model="vm.travelAgencyLine.dataStatus"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

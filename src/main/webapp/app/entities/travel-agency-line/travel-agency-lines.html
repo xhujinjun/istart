@@ -1,0 +1,97 @@
+<div>
+    <h2 translate="istartApp.travelAgencyLine.home.title">Travel Agency Lines</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="travel-agency-line.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  translate="istartApp.travelAgencyLine.home.createLabel">
+                        Create new Travel Agency Line
+                    </span>
+                </button>
+            </div>
+            <div class="col-xs-8 no-padding-right">
+                <form name="searchForm" class="form-inline">
+                    <div class="input-group pull-right" >
+                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'istartApp.travelAgencyLine.home.search' | translate }}">
+                        <span  class="input-group-btn width-min" >
+                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
+                                <span class="glyphicon glyphicon-search"></span>
+                            </button>
+                        </span>
+                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
+                            <button class="btn btn-info" ng-click="vm.clear()">
+                                <span class="glyphicon glyphicon-trash"></span>
+                            </button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="travelAgencyId"><span translate="istartApp.travelAgencyLine.travelAgencyId">Travel Agency Id</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="line_number"><span translate="istartApp.travelAgencyLine.line_number">Line Number</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="lineName"><span translate="istartApp.travelAgencyLine.lineName">Line Name</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="spotIntroduce"><span translate="istartApp.travelAgencyLine.spotIntroduce">Spot Introduce</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="lineDatetime"><span translate="istartApp.travelAgencyLine.lineDatetime">Line Datetime</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="lineCity"><span translate="istartApp.travelAgencyLine.lineCity">Line City</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataCreator"><span translate="istartApp.travelAgencyLine.dataCreator">Data Creator</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataUpdater"><span translate="istartApp.travelAgencyLine.dataUpdater">Data Updater</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataCreateDatetime"><span translate="istartApp.travelAgencyLine.dataCreateDatetime">Data Create Datetime</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataUpdateDatetime"><span translate="istartApp.travelAgencyLine.dataUpdateDatetime">Data Update Datetime</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="dataStatus"><span translate="istartApp.travelAgencyLine.dataStatus">Data Status</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="travelAgencyLine in vm.travelAgencyLines track by travelAgencyLine.id">
+                    <td><a ui-sref="travel-agency-line-detail({id:travelAgencyLine.id})">{{travelAgencyLine.id}}</a></td>
+                    <td>{{travelAgencyLine.travelAgencyId}}</td>
+                    <td>{{travelAgencyLine.line_number}}</td>
+                    <td>{{travelAgencyLine.lineName}}</td>
+                    <td>{{travelAgencyLine.spotIntroduce}}</td>
+                    <td>{{travelAgencyLine.lineDatetime | date:'medium'}}</td>
+                    <td>{{travelAgencyLine.lineCity}}</td>
+                    <td>{{travelAgencyLine.dataCreator}}</td>
+                    <td>{{travelAgencyLine.dataUpdater}}</td>
+                    <td>{{travelAgencyLine.dataCreateDatetime | date:'medium'}}</td>
+                    <td>{{travelAgencyLine.dataUpdateDatetime | date:'medium'}}</td>
+                    <td>{{travelAgencyLine.dataStatus}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="travel-agency-line-detail({id:travelAgencyLine.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="travel-agency-line.edit({id:travelAgencyLine.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="travel-agency-line.delete({id:travelAgencyLine.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

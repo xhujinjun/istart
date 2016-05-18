@@ -68,6 +68,8 @@
                 "sysres": "系统资源",
                 "version": "版本管理",
                 "area": "Area",
+                "travelAgency": "旅行社管理",
+                "travelAgencyLine": "旅行社线路管理",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {
@@ -133,7 +135,7 @@
             }
         },
         "field": {
-            "id" : "ID"
+            "id" : "数据ID"
         }
     },
     "entity": {
