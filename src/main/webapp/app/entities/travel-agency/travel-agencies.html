@@ -31,57 +31,5 @@
         </div>
     </div>
     <br/>
-    <div class="table-responsive">
-        <table class="jh-table table table-striped">
-            <thead>
-                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
-                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="agencyCode"><span translate="istartApp.travelAgency.agencyCode">Agency Code</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="agencyName"><span translate="istartApp.travelAgency.agencyName">Agency Name</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="agencyIntroduce"><span translate="istartApp.travelAgency.agencyIntroduce">Agency Introduce</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="addr"><span translate="istartApp.travelAgency.addr">Addr</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="buildDate"><span translate="istartApp.travelAgency.buildDate">Build Date</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="contactPhone"><span translate="istartApp.travelAgency.contactPhone">Contact Phone</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="travelAgency in vm.travelAgencies track by travelAgency.id">
-                    <td><a ui-sref="travel-agency-detail({id:travelAgency.id})">{{travelAgency.id}}</a></td>
-                    <td>{{travelAgency.agencyCode}}</td>
-                    <td>{{travelAgency.agencyName}}</td>
-                    <td>{{travelAgency.agencyIntroduce}}</td>
-                    <td>{{travelAgency.addr}}</td>
-                        <td>{{travelAgency.buildDate | date:'mediumDate'}}</td>
-                    <td>{{travelAgency.contactPhone}}</td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="travel-agency-detail({id:travelAgency.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="travel-agency.edit({id:travelAgency.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="travel-agency.delete({id:travelAgency.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="text-center">
-        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
-        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
-    </div>
+    <table bs-table-control="vm.bsTableControl"></table>
 </div>
