@@ -1,0 +1,31 @@
+{
+    "istartApp": {
+        "dic" : {
+            "home": {
+                "title": "Dics",
+                "createLabel": "Create a new Dic",
+                "createOrEditLabel": "Create or edit a Dic",
+                "search": "Search for Dic"
+            },
+            "created": "A new Dic is created with identifier {{ param }}",
+            "updated": "A Dic is updated with identifier {{ param }}",
+            "deleted": "A Dic is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Dic {{ id }}?"
+            },
+            "detail": {
+                "title": "Dic"
+            },
+            "dicTypeId": "Dic Type Id",
+            "dicCode": "Dic Code",
+            "dicName": "Dic Name",
+            "dicNameDefinition": "Dic Name Definition",
+            "dataCreator": "Data Creator",
+            "dataUpdater": "Data Updater",
+            "dataCreateDatetime": "Data Create Datetime",
+            "dataUpdateDatetime": "Data Update Datetime",
+            "dataStatus": "Data Status",
+            "dicType": "Dic Type"
+        }
+    }
+}

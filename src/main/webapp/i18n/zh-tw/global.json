@@ -67,6 +67,8 @@
                 "area": "Area",
                 "travelAgency": "Travel Agency",
                 "travelAgencyLine": "Travel Agency Line",
+                "dicType": "Dic Type",
+                "dic": "Dic",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

@@ -1,49 +1,37 @@
-package com.istart.framework.domain;
+package com.istart.framework.web.rest.dto;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.springframework.data.elasticsearch.annotations.Document;
-
-import javax.persistence.*;
-import java.io.Serializable;
 import java.time.ZonedDateTime;
+import java.io.Serializable;
 import java.util.Objects;
 
+
 /**
- * A DicType.
+ * A DTO for the DicType entity.
  */
-@Entity
-@Table(name = "dic_type")
-@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-@Document(indexName = "dictype")
-public class DicType implements Serializable {
+public class DicTypeDTO implements Serializable {
 
-    private static final long serialVersionUID = 1L;
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "dic_type_code")
     private String dicTypeCode;
 
-    @Column(name = "dic_type_name")
+
     private String dicTypeName;
 
-    @Column(name = "data_creator")
+
     private String dataCreator;
 
-    @Column(name = "data_updater")
+
     private String dataUpdater;
 
-    @Column(name = "data_create_datetime")
+
     private ZonedDateTime dataCreateDatetime;
 
-    @Column(name = "data_update_datetime")
+
     private ZonedDateTime dataUpdateDatetime;
 
-    @Column(name = "data_status")
+
     private Integer dataStatus;
+
 
     public Long getId() {
         return id;
@@ -52,7 +40,6 @@ public class DicType implements Serializable {
     public void setId(Long id) {
         this.id = id;
     }
-
     public String getDicTypeCode() {
         return dicTypeCode;
     }
@@ -60,7 +47,6 @@ public class DicType implements Serializable {
     public void setDicTypeCode(String dicTypeCode) {
         this.dicTypeCode = dicTypeCode;
     }
-
     public String getDicTypeName() {
         return dicTypeName;
     }
@@ -68,7 +54,6 @@ public class DicType implements Serializable {
     public void setDicTypeName(String dicTypeName) {
         this.dicTypeName = dicTypeName;
     }
-
     public String getDataCreator() {
         return dataCreator;
     }
@@ -76,7 +61,6 @@ public class DicType implements Serializable {
     public void setDataCreator(String dataCreator) {
         this.dataCreator = dataCreator;
     }
-
     public String getDataUpdater() {
         return dataUpdater;
     }
@@ -84,7 +68,6 @@ public class DicType implements Serializable {
     public void setDataUpdater(String dataUpdater) {
         this.dataUpdater = dataUpdater;
     }
-
     public ZonedDateTime getDataCreateDatetime() {
         return dataCreateDatetime;
     }
@@ -92,7 +75,6 @@ public class DicType implements Serializable {
     public void setDataCreateDatetime(ZonedDateTime dataCreateDatetime) {
         this.dataCreateDatetime = dataCreateDatetime;
     }
-
     public ZonedDateTime getDataUpdateDatetime() {
         return dataUpdateDatetime;
     }
@@ -100,7 +82,6 @@ public class DicType implements Serializable {
     public void setDataUpdateDatetime(ZonedDateTime dataUpdateDatetime) {
         this.dataUpdateDatetime = dataUpdateDatetime;
     }
-
     public Integer getDataStatus() {
         return dataStatus;
     }
@@ -117,11 +98,12 @@ public class DicType implements Serializable {
         if (o == null || getClass() != o.getClass()) {
             return false;
         }
-        DicType dicType = (DicType) o;
-        if(dicType.id == null || id == null) {
-            return false;
-        }
-        return Objects.equals(id, dicType.id);
+
+        DicTypeDTO dicTypeDTO = (DicTypeDTO) o;
+
+        if ( ! Objects.equals(id, dicTypeDTO.id)) return false;
+
+        return true;
     }
 
     @Override
@@ -131,7 +113,7 @@ public class DicType implements Serializable {
 
     @Override
     public String toString() {
-        return "DicType{" +
+        return "DicTypeDTO{" +
             "id=" + id +
             ", dicTypeCode='" + dicTypeCode + "'" +
             ", dicTypeName='" + dicTypeName + "'" +

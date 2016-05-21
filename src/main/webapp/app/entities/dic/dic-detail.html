@@ -1,0 +1,63 @@
+
+<div>
+    <h2><span translate="istartApp.dic.detail.title">Dic</span> {{vm.dic.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="istartApp.dic.dicTypeId">Dic Type Id</span></dt>
+        <dd>
+            <span>{{vm.dic.dicTypeId}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.dic.dicCode">Dic Code</span></dt>
+        <dd>
+            <span>{{vm.dic.dicCode}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.dic.dicName">Dic Name</span></dt>
+        <dd>
+            <span>{{vm.dic.dicName}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.dic.dicNameDefinition">Dic Name Definition</span></dt>
+        <dd>
+            <span>{{vm.dic.dicNameDefinition}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.dic.dataCreator">Data Creator</span></dt>
+        <dd>
+            <span>{{vm.dic.dataCreator}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.dic.dataUpdater">Data Updater</span></dt>
+        <dd>
+            <span>{{vm.dic.dataUpdater}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.dic.dataCreateDatetime">Data Create Datetime</span></dt>
+        <dd>
+            <span>{{vm.dic.dataCreateDatetime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.dic.dataUpdateDatetime">Data Update Datetime</span></dt>
+        <dd>
+            <span>{{vm.dic.dataUpdateDatetime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.dic.dataStatus">Data Status</span></dt>
+        <dd>
+            <span>{{vm.dic.dataStatus}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.dic.dicType">Dic Type</span></dt>
+        <dd>
+            <a ui-sref="dic-type-detail({id:vm.dic.dicTypeId})">{{vm.dic.dicTypeId}}</a>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

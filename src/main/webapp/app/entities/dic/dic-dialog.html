@@ -1,0 +1,94 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myDicLabel" translate="istartApp.dic.home.createOrEditLabel">Create or edit a Dic</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.dic.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.dic.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.dic.dicTypeId" for="field_dicTypeId">Dic Type Id</label>
+            <input type="number" class="form-control" name="dicTypeId" id="field_dicTypeId"
+                    ng-model="vm.dic.dicTypeId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.dic.dicCode" for="field_dicCode">Dic Code</label>
+            <input type="text" class="form-control" name="dicCode" id="field_dicCode"
+                    ng-model="vm.dic.dicCode"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.dic.dicName" for="field_dicName">Dic Name</label>
+            <input type="text" class="form-control" name="dicName" id="field_dicName"
+                    ng-model="vm.dic.dicName"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.dic.dicNameDefinition" for="field_dicNameDefinition">Dic Name Definition</label>
+            <input type="text" class="form-control" name="dicNameDefinition" id="field_dicNameDefinition"
+                    ng-model="vm.dic.dicNameDefinition"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.dic.dataCreator" for="field_dataCreator">Data Creator</label>
+            <input type="text" class="form-control" name="dataCreator" id="field_dataCreator"
+                    ng-model="vm.dic.dataCreator"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.dic.dataUpdater" for="field_dataUpdater">Data Updater</label>
+            <input type="text" class="form-control" name="dataUpdater" id="field_dataUpdater"
+                    ng-model="vm.dic.dataUpdater"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.dic.dataCreateDatetime" for="field_dataCreateDatetime">Data Create Datetime</label>
+                <div class="input-group">
+                    <input id="field_dataCreateDatetime" type="text" class="form-control" name="dataCreateDatetime" datetime-picker="{{dateformat}}" ng-model="vm.dic.dataCreateDatetime" is-open="vm.datePickerOpenStatus.dataCreateDatetime"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataCreateDatetime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.dic.dataUpdateDatetime" for="field_dataUpdateDatetime">Data Update Datetime</label>
+                <div class="input-group">
+                    <input id="field_dataUpdateDatetime" type="text" class="form-control" name="dataUpdateDatetime" datetime-picker="{{dateformat}}" ng-model="vm.dic.dataUpdateDatetime" is-open="vm.datePickerOpenStatus.dataUpdateDatetime"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataUpdateDatetime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.dic.dataStatus" for="field_dataStatus">Data Status</label>
+            <input type="number" class="form-control" name="dataStatus" id="field_dataStatus"
+                    ng-model="vm.dic.dataStatus"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label translate="istartApp.dic.dicType" for="field_dicType">Dic Type</label>
+            <select class="form-control" id="field_dicType" name="dicType" ng-model="vm.dic.dicTypeId" ng-options="dicType.id as dicType.id for dicType in vm.dictypes">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

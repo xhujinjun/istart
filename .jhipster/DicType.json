@@ -1,0 +1,40 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "dicTypeCode",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "dicTypeName",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "dataCreator",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataUpdater",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataCreateDatetime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataUpdateDatetime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataStatus",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160521064540",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "dic_type",
+    "pagination": "pagination"
+}

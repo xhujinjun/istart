@@ -1,0 +1,56 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "dicType",
+            "otherEntityName": "dicType",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "dicTypeId",
+            "fieldType": "Long",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "dicCode",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "dicName",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "dicNameDefinition",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataCreator",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataUpdater",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataCreateDatetime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataUpdateDatetime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataStatus",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160521065001",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "dic",
+    "pagination": "pagination"
+}

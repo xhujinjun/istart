@@ -1,10 +1,14 @@
 package com.istart.framework.repository;
 
-import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
-
 import com.istart.framework.domain.DicType;
 
-public interface DicTypeRepository  extends JpaRepository<DicType,Long>,JpaSpecificationExecutor<DicType>{
+import org.springframework.data.jpa.repository.*;
+
+import java.util.List;
+
+/**
+ * Spring Data JPA repository for the DicType entity.
+ */
+public interface DicTypeRepository extends JpaRepository<DicType,Long> {
 
 }

@@ -1,0 +1,76 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myDicTypeLabel" translate="istartApp.dicType.home.createOrEditLabel">Create or edit a Dic Type</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.dicType.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.dicType.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.dicType.dicTypeCode" for="field_dicTypeCode">Dic Type Code</label>
+            <input type="text" class="form-control" name="dicTypeCode" id="field_dicTypeCode"
+                    ng-model="vm.dicType.dicTypeCode"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.dicType.dicTypeName" for="field_dicTypeName">Dic Type Name</label>
+            <input type="text" class="form-control" name="dicTypeName" id="field_dicTypeName"
+                    ng-model="vm.dicType.dicTypeName"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.dicType.dataCreator" for="field_dataCreator">Data Creator</label>
+            <input type="text" class="form-control" name="dataCreator" id="field_dataCreator"
+                    ng-model="vm.dicType.dataCreator"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.dicType.dataUpdater" for="field_dataUpdater">Data Updater</label>
+            <input type="text" class="form-control" name="dataUpdater" id="field_dataUpdater"
+                    ng-model="vm.dicType.dataUpdater"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.dicType.dataCreateDatetime" for="field_dataCreateDatetime">Data Create Datetime</label>
+                <div class="input-group">
+                    <input id="field_dataCreateDatetime" type="text" class="form-control" name="dataCreateDatetime" datetime-picker="{{dateformat}}" ng-model="vm.dicType.dataCreateDatetime" is-open="vm.datePickerOpenStatus.dataCreateDatetime"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataCreateDatetime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.dicType.dataUpdateDatetime" for="field_dataUpdateDatetime">Data Update Datetime</label>
+                <div class="input-group">
+                    <input id="field_dataUpdateDatetime" type="text" class="form-control" name="dataUpdateDatetime" datetime-picker="{{dateformat}}" ng-model="vm.dicType.dataUpdateDatetime" is-open="vm.datePickerOpenStatus.dataUpdateDatetime"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataUpdateDatetime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.dicType.dataStatus" for="field_dataStatus">Data Status</label>
+            <input type="number" class="form-control" name="dataStatus" id="field_dataStatus"
+                    ng-model="vm.dicType.dataStatus"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
