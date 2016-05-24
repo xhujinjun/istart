@@ -12,11 +12,16 @@ import java.util.Objects;
  */
 public class DicDTO implements Serializable {
 
-    private Long id;
+	private static final long serialVersionUID = 1L;
+
+	private Long id;
 
     private Long dicTypeId;
+    
+    private String dicTypeCode;
 
-
+    private String dicTypeName;
+    
     private String dicCode;
 
 
@@ -111,7 +116,25 @@ public class DicDTO implements Serializable {
     public void setDicTypeId(Long dicTypeId) {
         this.dicTypeId = dicTypeId;
     }
-    @Override
+    
+    public String getDicTypeName() {
+		return dicTypeName;
+	}
+
+	public void setDicTypeName(String dicTypeName) {
+		this.dicTypeName = dicTypeName;
+	}
+
+	
+	public String getDicTypeCode() {
+		return dicTypeCode;
+	}
+
+	public void setDicTypeCode(String dicTypeCode) {
+		this.dicTypeCode = dicTypeCode;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

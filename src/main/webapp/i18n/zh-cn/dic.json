@@ -2,10 +2,10 @@
     "istartApp": {
         "dic" : {
             "home": {
-                "title": "Dics",
-                "createLabel": "Create a new Dic",
-                "createOrEditLabel": "Create or edit a Dic",
-                "search": "Search for Dic"
+                "title": "字典管理",
+                "createLabel": "新增字典",
+                "createOrEditLabel": "新增或编辑字典",
+                "search": "检索字典"
             },
             "created": "A new Dic is created with identifier {{ param }}",
             "updated": "A Dic is updated with identifier {{ param }}",
@@ -14,18 +14,17 @@
                 "question": "Are you sure you want to delete Dic {{ id }}?"
             },
             "detail": {
-                "title": "Dic"
+                "title": "字段明细"
             },
-            "dicTypeId": "Dic Type Id",
-            "dicCode": "Dic Code",
-            "dicName": "Dic Name",
-            "dicNameDefinition": "Dic Name Definition",
-            "dataCreator": "Data Creator",
-            "dataUpdater": "Data Updater",
-            "dataCreateDatetime": "Data Create Datetime",
-            "dataUpdateDatetime": "Data Update Datetime",
-            "dataStatus": "Data Status",
-            "dicType": "Dic Type"
+            "dicType": "字典类型",
+            "dicCode": "字典编码",
+            "dicName": "字典名称",
+            "dicNameDefinition": "字典定义",
+            "dataCreator": "数据创建者",
+            "dataUpdater": "数据更新者",
+            "dataCreateDatetime": "数据创建时间",
+            "dataUpdateDatetime": "数据更新时间",
+            "dataStatus": "数据有效状态"
         }
     }
 }

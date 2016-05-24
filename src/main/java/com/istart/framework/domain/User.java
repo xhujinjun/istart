@@ -5,6 +5,8 @@ import com.istart.framework.domain.base.AbstractAuditingEntity;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import org.hibernate.validator.constraints.Email;
 import org.springframework.data.elasticsearch.annotations.Document;
 
@@ -25,6 +27,8 @@ import java.time.ZonedDateTime;
 @Table(name = "user")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "user")
+@DynamicInsert
+@DynamicUpdate
 public class User extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -70,8 +70,8 @@
                 "area": "Area",
                 "travelAgency": "旅行社管理",
                 "travelAgencyLine": "旅行社线路管理",
-                "dicType": "Dic Type",
-                "dic": "Dic",
+                "dicType": "字典类型管理",
+                "dic": "字典管理",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

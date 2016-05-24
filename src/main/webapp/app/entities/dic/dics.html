@@ -2,96 +2,27 @@
     <h2 translate="istartApp.dic.home.title">Dics</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="dic.new" >
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <span class="hidden-xs"  translate="istartApp.dic.home.createLabel">
-                        Create new Dic
-                    </span>
-                </button>
-            </div>
-            <div class="col-xs-8 no-padding-right">
-                <form name="searchForm" class="form-inline">
-                    <div class="input-group pull-right" >
-                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'istartApp.dic.home.search' | translate }}">
-                        <span  class="input-group-btn width-min" >
-                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
-                            <button class="btn btn-info" ng-click="vm.clear()">
-                                <span class="glyphicon glyphicon-trash"></span>
-                            </button>
-                        </span>
-                    </div>
-                </form>
-            </div>
-        </div>
+    	<div class="form-inline" role="form">
+		<div class="form-group">
+			<span>Offset: </span> <input name="offset" class="form-control w70" type="number" value="0">
+		</div>
+		<div class="form-group">
+			<span>Limit: </span> <input name="limit" class="form-control w70" type="number" value="5">
+		</div>
+		<div class="form-group">
+			<input name="search" class="form-control" type="text" placeholder="Search">
+		</div>
+		<button id="ok" type="submit" class="btn btn-default">OK</button>
+	</div>
+	<div id="toolbar">
+		<button class="btn btn-primary" ui-sref="dic.new">
+			<span class="glyphicon glyphicon-plus"></span> <span
+				class="hidden-xs" translate="istartApp.dic.home.createLabel">
+				Create new Dic Type </span>
+		</button>
+	</div>
     </div>
     <br/>
-    <div class="table-responsive">
-        <table class="jh-table table table-striped">
-            <thead>
-                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
-                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dicTypeId"><span translate="istartApp.dic.dicTypeId">Dic Type Id</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dicCode"><span translate="istartApp.dic.dicCode">Dic Code</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dicName"><span translate="istartApp.dic.dicName">Dic Name</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dicNameDefinition"><span translate="istartApp.dic.dicNameDefinition">Dic Name Definition</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dataCreator"><span translate="istartApp.dic.dataCreator">Data Creator</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dataUpdater"><span translate="istartApp.dic.dataUpdater">Data Updater</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dataCreateDatetime"><span translate="istartApp.dic.dataCreateDatetime">Data Create Datetime</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dataUpdateDatetime"><span translate="istartApp.dic.dataUpdateDatetime">Data Update Datetime</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dataStatus"><span translate="istartApp.dic.dataStatus">Data Status</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dicTypeId"><span translate="istartApp.dic.dicType">Dic Type</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="dic in vm.dics track by dic.id">
-                    <td><a ui-sref="dic-detail({id:dic.id})">{{dic.id}}</a></td>
-                    <td>{{dic.dicTypeId}}</td>
-                    <td>{{dic.dicCode}}</td>
-                    <td>{{dic.dicName}}</td>
-                    <td>{{dic.dicNameDefinition}}</td>
-                    <td>{{dic.dataCreator}}</td>
-                    <td>{{dic.dataUpdater}}</td>
-                    <td>{{dic.dataCreateDatetime | date:'medium'}}</td>
-                    <td>{{dic.dataUpdateDatetime | date:'medium'}}</td>
-                    <td>{{dic.dataStatus}}</td>
-                    <td>
-                        <a ui-sref="dic-type-detail({id:dic.dicTypeId})">{{dic.dicTypeId}}</a>
-                    </td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="dic-detail({id:dic.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="dic.edit({id:dic.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="dic.delete({id:dic.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="text-center">
-        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
-        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
-    </div>
+    
+    <table bs-table-control="vm.bsTableControl"></table>
 </div>

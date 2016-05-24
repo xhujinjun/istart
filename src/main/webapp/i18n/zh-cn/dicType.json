@@ -2,10 +2,10 @@
     "istartApp": {
         "dicType" : {
             "home": {
-                "title": "Dic Types",
-                "createLabel": "Create a new Dic Type",
-                "createOrEditLabel": "Create or edit a Dic Type",
-                "search": "Search for Dic Type"
+                "title": "字典类型管理",
+                "createLabel": "新增字段类型",
+                "createOrEditLabel": "创建或编辑字典类型",
+                "search": "检索字段类型"
             },
             "created": "A new Dic Type is created with identifier {{ param }}",
             "updated": "A Dic Type is updated with identifier {{ param }}",
@@ -14,15 +14,15 @@
                 "question": "Are you sure you want to delete Dic Type {{ id }}?"
             },
             "detail": {
-                "title": "Dic Type"
+                "title": "字典类型"
             },
-            "dicTypeCode": "Dic Type Code",
-            "dicTypeName": "Dic Type Name",
-            "dataCreator": "Data Creator",
-            "dataUpdater": "Data Updater",
-            "dataCreateDatetime": "Data Create Datetime",
-            "dataUpdateDatetime": "Data Update Datetime",
-            "dataStatus": "Data Status"
+            "dicTypeCode": "字典类型代码",
+            "dicTypeName": "字典类型名称",
+            "dataCreator": "数据创建者",
+            "dataUpdater": "数据更新者",
+            "dataCreateDatetime": "数据创建日期时间",
+            "dataUpdateDatetime": "数据更新日期时间",
+            "dataStatus": "数据有效状态"
         }
     }
 }

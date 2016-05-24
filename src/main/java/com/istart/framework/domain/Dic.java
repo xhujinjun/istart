@@ -2,6 +2,9 @@ package com.istart.framework.domain;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.Generated;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
@@ -16,6 +19,8 @@ import java.util.Objects;
 @Table(name = "dic")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "dic")
+@DynamicInsert
+@DynamicUpdate
 public class Dic implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -24,9 +29,13 @@ public class Dic implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @Column(name = "dic_type_id",insertable=false,updatable=false)
+    @Column(name = "dic_type_id")
     private Long dicTypeId;
 
+    @ManyToOne
+    @JoinColumn(name = "dic_type_id",insertable = false,updatable = false)
+    private DicType dicType;
+    
     @Column(name = "dic_code")
     private String dicCode;
 
@@ -42,17 +51,15 @@ public class Dic implements Serializable {
     @Column(name = "data_updater")
     private String dataUpdater;
 
-    @Column(name = "data_create_datetime")
+    @Column(name = "data_create_datetime",insertable=false,updatable=false)
     private ZonedDateTime dataCreateDatetime;
 
     @Column(name = "data_update_datetime")
+    @Generated(org.hibernate.annotations.GenerationTime.ALWAYS)
     private ZonedDateTime dataUpdateDatetime;
 
     @Column(name = "data_status")
     private Integer dataStatus;
-
-    @ManyToOne
-    private DicType dicType;
 
     public Long getId() {
         return id;

@@ -105,7 +105,7 @@ public class DicTypeResource {
     public ResponseEntity<List<DicTypeDTO>> getAllDicTypes(Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of DicTypes");
-        Page<DicType> page = dicTypeService.findAll(pageable); 
+        Page<DicType> page = dicTypeService.findAll(null); 
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/dic-types");
         return new ResponseEntity<>(dicTypeMapper.dicTypesToDicTypeDTOs(page.getContent()), headers, HttpStatus.OK);
     }
