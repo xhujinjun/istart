@@ -27,7 +27,12 @@ spring:
             enabled: false
     thymeleaf:
         mode: XHTML
-
+    beetl:
+        root: classpath:/templates/
+        prefix:
+        suffix: .html
+        order: 0
+        cofig: classpath:beetl.properties
 security:
     basic:
         enabled: false
