@@ -64,12 +64,6 @@
                         field: 'state',
                         checkbox: true
                     }, {
-                        field: 'id',
-                        title: '数据ID',
-                        align: 'center',
-                        valign: 'bottom',
-                        sortable: true
-                    }, {
                         field: 'agencyCode',
                         title: '旅行社编号',
                         align: 'center',
@@ -86,7 +80,7 @@
                         title: '旅行社介绍',
                         align: 'left',
                         valign: 'top',
-                        sortable: true
+                        formatter: agencyIntroduceFormatter
                     }, {
                         field: 'addr',
                         title: '旅行社地址',
@@ -117,15 +111,6 @@
             };
         
         function flagFormatter(value, row, index) {
-            /*return [
-                    '<a class="like" href="javascript:void(0)" title="Like">',
-                    '<i class="glyphicon glyphicon-heart"></i>',
-                    '</a>  ',
-                    '<a class="remove" href="javascript:void(0)" title="Remove">',
-                    '<i class="glyphicon glyphicon-remove"></i>',
-                    '</a>'
-                ].join('');*/
-            
             return [
              '<a type="submit" class="btn btn-info btn-sm" href="#/travel-agency/1">',
              '<span class="glyphicon glyphicon-eye-open"></span>',
@@ -140,6 +125,14 @@
              '<span class="hidden-xs hidden-sm">删除</span>',
              '</button>'
             ].join('');
+        }
+        function agencyIntroduceFormatter(value, row, index) {
+        	if(value != null){
+        		if(value.length>15){
+        			return value.substring(0,15) + "...";
+        		}
+        	}
+        	return value;
         }
         function rowStyle(row, index) {
             var classes = ['active', 'success', 'info', 'warning', 'danger'];

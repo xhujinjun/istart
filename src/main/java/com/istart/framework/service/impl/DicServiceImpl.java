@@ -94,7 +94,7 @@ public class DicServiceImpl implements DicService{
     @Transactional(readOnly = true) 
     public DicDTO findOne(Long id) {
         log.debug("Request to get Dic : {}", id);
-        Dic dic = dicRepository.findOne(id);
+        Dic dic = dicRepository.findById(id);
         DicDTO dicDTO = dicMapper.dicToDicDTO(dic);
         return dicDTO;
     }

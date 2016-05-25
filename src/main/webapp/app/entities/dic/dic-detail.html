@@ -3,9 +3,9 @@
     <h2><span translate="istartApp.dic.detail.title">Dic</span> {{vm.dic.id}}</h2>
     <hr>
     <dl class="dl-horizontal">
-        <dt><span translate="istartApp.dic.dicTypeId">Dic Type Id</span></dt>
+        <dt><span translate="istartApp.dic.dicType">Dic Type</span></dt>
         <dd>
-            <span>{{vm.dic.dicTypeId}}</span>
+            <a ui-sref="dic-type-detail({id:vm.dic.dicTypeId})">{{vm.dic.dicTypeName}}</a>
         </dd>
         <hr>
         <dt><span translate="istartApp.dic.dicCode">Dic Code</span></dt>
@@ -46,11 +46,6 @@
         <dt><span translate="istartApp.dic.dataStatus">Data Status</span></dt>
         <dd>
             <span>{{vm.dic.dataStatus}}</span>
-        </dd>
-        <hr>
-        <dt><span translate="istartApp.dic.dicType">Dic Type</span></dt>
-        <dd>
-            <a ui-sref="dic-type-detail({id:vm.dic.dicTypeId})">{{vm.dic.dicTypeId}}</a>
         </dd>
         <hr>
     </dl>
