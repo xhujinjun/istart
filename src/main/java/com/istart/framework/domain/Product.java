@@ -35,6 +35,7 @@ public class Product implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	//
 	@Column(name = "pno")
 	private String pno;
 
