@@ -2,6 +2,9 @@ package com.istart.framework.domain;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.Generated;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
@@ -16,6 +19,8 @@ import java.util.Objects;
 @Table(name = "travel_agency_line")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "travelagencyline")
+@DynamicInsert
+@DynamicUpdate
 public class TravelAgencyLine implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -48,10 +53,11 @@ public class TravelAgencyLine implements Serializable {
     @Column(name = "data_updater")
     private String dataUpdater;
 
-    @Column(name = "data_create_datetime")
+    @Column(name = "data_create_datetime",insertable=false,updatable=false)
     private ZonedDateTime dataCreateDatetime;
 
     @Column(name = "data_update_datetime")
+    @Generated(org.hibernate.annotations.GenerationTime.ALWAYS)  
     private ZonedDateTime dataUpdateDatetime;
 
     @Column(name = "data_status")

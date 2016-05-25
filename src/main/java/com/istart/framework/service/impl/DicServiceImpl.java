@@ -1,25 +1,36 @@
 package com.istart.framework.service.impl;
 
-import com.istart.framework.service.DicService;
-import com.istart.framework.domain.Dic;
-import com.istart.framework.repository.DicRepository;
-import com.istart.framework.repository.search.DicSearchRepository;
-import com.istart.framework.web.rest.dto.DicDTO;
-import com.istart.framework.web.rest.mapper.DicMapper;
+import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Join;
+import javax.persistence.criteria.JoinType;
+import javax.persistence.criteria.Path;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.inject.Inject;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
-
-import static org.elasticsearch.index.query.QueryBuilders.*;
+import com.istart.framework.domain.Dic;
+import com.istart.framework.domain.DicType;
+import com.istart.framework.repository.DicRepository;
+import com.istart.framework.repository.search.DicSearchRepository;
+import com.istart.framework.service.DicService;
+import com.istart.framework.web.rest.dto.DicDTO;
+import com.istart.framework.web.rest.mapper.DicMapper;
+import com.istart.framework.web.rest.search.SearchDic;
 
 /**
  * Service Implementation for managing Dic.
@@ -67,6 +78,13 @@ public class DicServiceImpl implements DicService{
         return result;
     }
 
+    @Override
+    @Transactional(readOnly = true) 
+    public Page<Dic> findByPageSearcg(final SearchDic searchDic,Pageable pageable) {
+        log.debug("Request to get all Dics");
+        Page<Dic> result = dicRepository.findAll(this.getSpecification(searchDic), pageable);
+        return result;
+    } 
     /**
      *  Get one dic by id.
      *
@@ -103,4 +121,50 @@ public class DicServiceImpl implements DicService{
         log.debug("Request to search for a page of Dics for query {}", query);
         return dicSearchRepository.search(queryStringQuery(query), pageable);
     }
+    
+    /**
+     * 根据字典类型代码和字典代码动态查询对应的字典（测试用）
+     */
+    @Transactional(readOnly = true)
+    @Override
+    public Dic searchByDb(final SearchDic searchDic) {
+        log.debug("Request to search for a page of Dics for query {}", searchDic);
+        return dicRepository.findOne(getSpecification(searchDic));
+    } 
+    /**
+     * 动态查询字典
+     * @param searchDic
+     * @return
+     */
+    private Specification<Dic> getSpecification(final SearchDic searchDic){
+    	return new Specification<Dic>() {
+			@Override
+			public Predicate toPredicate(Root<Dic> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+				Join<Object, Object> join = root.join("dicType",JoinType.LEFT);
+				
+				List<Predicate> list = new ArrayList<Predicate>();
+				
+				String dicTypeCode = searchDic.getDicTypeCode();
+				if(StringUtils.isNoneBlank(dicTypeCode)){
+					Path<String> expDicTypeCode = join.get("dicTypeCode");
+					list.add(cb.equal(expDicTypeCode, dicTypeCode));
+				}
+				
+				String dicCode = searchDic.getDicCode();
+				if (StringUtils.isNoneBlank(dicCode)) {
+					Path<String> expDicCode = root.get("dicCode");
+					list.add(cb.equal(expDicCode, dicCode));
+				}
+				
+				list.add(cb.equal(root.get("dataStatus"), "1"));
+				Predicate[] p = new Predicate[list.size()];
+				return cb.and(list.toArray(p));
+			}
+		};
+    }
+
+	@Override
+	public DicType searchByDicTypeCodeAndDicCode(String dicTypeCode, String dicCode) {
+		return dicRepository.findByDicTypeCodeAndDicCode(dicTypeCode,dicCode);
+	}
 }

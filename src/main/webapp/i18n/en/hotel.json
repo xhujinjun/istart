@@ -1,0 +1,10 @@
+{
+    "istartApp": {
+        "hotel" : {
+            "name": "Data Updater",
+            "id": "Data Create Datetime",
+            "level": "Data Update Datetime",
+            "status": "Data Status"
+        }
+    }
+}

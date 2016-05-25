@@ -2,6 +2,8 @@ package com.istart.framework.domain;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
@@ -17,6 +19,8 @@ import java.util.Objects;
 @Table(name = "book")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "book")
+@DynamicInsert
+@DynamicUpdate
 public class Book implements Serializable {
 
     private static final long serialVersionUID = 1L;

@@ -6,6 +6,7 @@
             "HEADER": "导航",
             "DASHBOARD": "工作台",
             "CALENDAR": "工作日历",
+            "HOTEL": "酒店",
             "EMAIL": "电子邮件",
             "WIDGETS": "WIDGETS",
             "components": {
@@ -72,7 +73,11 @@
                 "travelAgencyLine": "旅行社线路管理",
                 "dicType": "Dic Type",
                 "dic": "Dic",
+<<<<<<< HEAD
                 "product": "Product",
+=======
+                 "hotel": "酒店管理",
+>>>>>>> e464f1f20d43edf1763f229b06b5b485e13cde16
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

@@ -7,6 +7,8 @@ import com.istart.framework.web.rest.util.HeaderUtil;
 import com.istart.framework.web.rest.util.PaginationUtil;
 import com.istart.framework.web.rest.dto.DicDTO;
 import com.istart.framework.web.rest.mapper.DicMapper;
+import com.istart.framework.web.rest.search.SearchDic;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -102,10 +104,10 @@ public class DicResource {
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     @Transactional(readOnly = true)
-    public ResponseEntity<List<DicDTO>> getAllDics(Pageable pageable)
+    public ResponseEntity<List<DicDTO>> getAllDics(SearchDic searchDic,Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Dics");
-        Page<Dic> page = dicService.findAll(pageable); 
+        Page<Dic> page = dicService.findByPageSearcg(searchDic,null); 
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/dics");
         return new ResponseEntity<>(dicMapper.dicsToDicDTOs(page.getContent()), headers, HttpStatus.OK);
     }
@@ -158,7 +160,7 @@ public class DicResource {
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     @Transactional(readOnly = true)
-    public ResponseEntity<List<DicDTO>> searchDics(@RequestParam String query, Pageable pageable)
+    public ResponseEntity<List<DicDTO>> searchDicsByEla(@RequestParam String query, Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to search for a page of Dics for query {}", query);
         Page<Dic> page = dicService.search(query, pageable);
@@ -166,4 +168,15 @@ public class DicResource {
         return new ResponseEntity<>(dicMapper.dicsToDicDTOs(page.getContent()), headers, HttpStatus.OK);
     }
 
+    @RequestMapping(value = "/_searchDB/dics",
+            method = RequestMethod.GET,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+        @Timed
+        @Transactional(readOnly = true)
+        public ResponseEntity<DicDTO> searchDics(SearchDic searchDic, Pageable pageable)
+            throws URISyntaxException {
+            log.debug("REST request to search for a page of Dics for query {}", searchDic);
+            Dic dic = dicService.searchByDb(searchDic);
+            return new ResponseEntity<>(dicMapper.dicToDicDTO(dic), null, HttpStatus.OK);
+        }
 }
