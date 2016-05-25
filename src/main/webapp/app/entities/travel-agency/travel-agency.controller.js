@@ -68,68 +68,73 @@
                         title: '旅行社编号',
                         align: 'center',
                         valign: 'middle',
-                        sortable: true
+                        sortable: true,
+                        width: '10%'
                     }, {
                         field: 'agencyName',
                         title: '旅行社名称',
                         align: 'left',
                         valign: 'top',
-                        sortable: true
+                        sortable: true,
+                        width: '10%'
                     }, {
                         field: 'agencyIntroduce',
                         title: '旅行社介绍',
                         align: 'left',
                         valign: 'top',
-                        formatter: agencyIntroduceFormatter
+                        formatter: agencyIntroduceFormatter,
+                        width: '20%'
                     }, {
                         field: 'addr',
                         title: '旅行社地址',
                         align: 'left',
                         valign: 'top',
-                        sortable: true
+                        width: '20%'
                     }, {
                         field: 'buildDate',
                         title: '成立时间',
                         align: 'left',
                         valign: 'top',
-                        sortable: true
+                        sortable: true,
+                        width: '10%'
                     }, {
                         field: 'contactPhone',
                         title: '联系电话',
                         align: 'left',
                         valign: 'top',
-                        sortable: true
+                        width: '10%'
                     },{
                         field: '操作',
                         title: '操作',
                         align: 'center',
                         valign: 'middle',
                         formatter: flagFormatter,
-                        events: operateEvents
+                        events: operateEvents,
+                        width: '20%'
                     }]
                 }
             };
         
         function flagFormatter(value, row, index) {
-            return [
-             '<a type="submit" class="btn btn-info btn-sm" href="#/travel-agency/1">',
-             '<span class="glyphicon glyphicon-eye-open"></span>',
-             '<span class="hidden-xs hidden-sm">明细</span>',
-             '</button>',
-             '<a type="submit" class="btn btn-primary btn-sm" href="#/travel-agency/1/edit">',
-             '<span class="glyphicon glyphicon-pencil"></span>',
-             '<span class="hidden-xs hidden-sm">编辑</span>',
-             '</button>',
-             '<a type="submit" class="btn btn-danger btn-sm" href="#/travel-agency/1/delete">',
-             '<span class="glyphicon glyphicon-remove-circle"></span>',
-             '<span class="hidden-xs hidden-sm">删除</span>',
-             '</button>'
+        	return [
+        	        "<a href='#/travel-agency/" + row.id + "' class='btn btn-info btn-sm'>",
+        	        	"<span class='glyphicon glyphicon-eye-open'></span>",
+        	        	"<span class='hidden-xs hidden-sm'>明细</span>",
+        	        "</a>",
+        	        "<a href='#/travel-agency/" + row.id + "/edit' class='btn btn-primary btn-sm'>",
+        	        	"<span class='glyphicon glyphicon-pencil'></span>",
+        	        	"<span class='hidden-xs hidden-sm'>编辑</span>",
+        	        "</a>",
+        	        "<a href='#/travel-agency/" + row.id + "/delete' class='btn btn-danger btn-sm'>",
+        	        	"<span class='glyphicon glyphicon-remove-circle'></span>",
+        	        	"<span class='hidden-xs hidden-sm'>删除</span>",
+        	        "</a>"
             ].join('');
         }
         function agencyIntroduceFormatter(value, row, index) {
         	if(value != null){
-        		if(value.length>15){
-        			return value.substring(0,15) + "...";
+        		if(value.length>30){
+        			return value.substring(0,30) + "...";
         		}
         	}
         	return value;
