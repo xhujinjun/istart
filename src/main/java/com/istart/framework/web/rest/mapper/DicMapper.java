@@ -13,6 +13,8 @@ import java.util.List;
 public interface DicMapper {
 
     @Mapping(source = "dicType.id", target = "dicTypeId")
+    @Mapping(source = "dicType.dicTypeName", target = "dicTypeName")
+    @Mapping(source = "dicType.dicTypeCode", target = "dicTypeCode")
     DicDTO dicToDicDTO(Dic dic);
 
     List<DicDTO> dicsToDicDTOs(List<Dic> dics);

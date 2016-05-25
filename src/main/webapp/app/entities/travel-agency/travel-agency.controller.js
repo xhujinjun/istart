@@ -55,8 +55,10 @@
                     pagination: true,
                     idField: 'id',
                     pageSize: 10,
-                    pageList: [10, 25, 50, 100, 200],
+                    pageList: [10, 25, 50, 100],
                     paginationVAlign: 'bottom',
+                    /*sidePagination: 'server',*/
+                    	
                     rowStyle: rowStyle,
                     columns: [{
                         field: 'state',
@@ -115,14 +117,29 @@
             };
         
         function flagFormatter(value, row, index) {
-            return [
+            /*return [
                     '<a class="like" href="javascript:void(0)" title="Like">',
                     '<i class="glyphicon glyphicon-heart"></i>',
                     '</a>  ',
                     '<a class="remove" href="javascript:void(0)" title="Remove">',
                     '<i class="glyphicon glyphicon-remove"></i>',
                     '</a>'
-                ].join('');
+                ].join('');*/
+            
+            return [
+             '<a type="submit" class="btn btn-info btn-sm" href="#/travel-agency/1">',
+             '<span class="glyphicon glyphicon-eye-open"></span>',
+             '<span class="hidden-xs hidden-sm">明细</span>',
+             '</button>',
+             '<a type="submit" class="btn btn-primary btn-sm" href="#/travel-agency/1/edit">',
+             '<span class="glyphicon glyphicon-pencil"></span>',
+             '<span class="hidden-xs hidden-sm">编辑</span>',
+             '</button>',
+             '<a type="submit" class="btn btn-danger btn-sm" href="#/travel-agency/1/delete">',
+             '<span class="glyphicon glyphicon-remove-circle"></span>',
+             '<span class="hidden-xs hidden-sm">删除</span>',
+             '</button>'
+            ].join('');
         }
         function rowStyle(row, index) {
             var classes = ['active', 'success', 'info', 'warning', 'danger'];

@@ -2,11 +2,15 @@ package com.istart.framework.domain;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.Generated;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.ZonedDateTime;
+import java.util.List;
 import java.util.Objects;
 
 /**
@@ -16,6 +20,8 @@ import java.util.Objects;
 @Table(name = "dic_type")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "dictype")
+@DynamicInsert
+@DynamicUpdate
 public class DicType implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -23,7 +29,10 @@ public class DicType implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
+    
+    @OneToMany(mappedBy="dicType", cascade={javax.persistence.CascadeType.ALL}, fetch=FetchType.LAZY)
+    private List<Dic> dics;
+    
     @Column(name = "dic_type_code")
     private String dicTypeCode;
 
@@ -36,10 +45,11 @@ public class DicType implements Serializable {
     @Column(name = "data_updater")
     private String dataUpdater;
 
-    @Column(name = "data_create_datetime")
+    @Column(name = "data_create_datetime",insertable=false,updatable=false)
     private ZonedDateTime dataCreateDatetime;
 
     @Column(name = "data_update_datetime")
+    @Generated(org.hibernate.annotations.GenerationTime.ALWAYS)  
     private ZonedDateTime dataUpdateDatetime;
 
     @Column(name = "data_status")
@@ -109,7 +119,15 @@ public class DicType implements Serializable {
         this.dataStatus = dataStatus;
     }
 
-    @Override
+    public List<Dic> getDics() {
+		return dics;
+	}
+
+	public void setDics(List<Dic> dics) {
+		this.dics = dics;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

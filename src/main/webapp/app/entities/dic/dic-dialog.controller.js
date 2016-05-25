@@ -31,6 +31,7 @@
             if (vm.dic.id !== null) {
                 Dic.update(vm.dic, onSaveSuccess, onSaveError);
             } else {
+            	console.log('dic:',vm.dic);
                 Dic.save(vm.dic, onSaveSuccess, onSaveError);
             }
         };

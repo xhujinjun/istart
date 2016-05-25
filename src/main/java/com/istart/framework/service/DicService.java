@@ -1,7 +1,10 @@
 package com.istart.framework.service;
 
 import com.istart.framework.domain.Dic;
+import com.istart.framework.domain.DicType;
 import com.istart.framework.web.rest.dto.DicDTO;
+import com.istart.framework.web.rest.search.SearchDic;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -29,6 +32,7 @@ public interface DicService {
      */
     Page<Dic> findAll(Pageable pageable);
 
+    Page<Dic> findByPageSearcg(final SearchDic searchDic,Pageable pageable);
     /**
      *  Get the "id" dic.
      *  
@@ -51,4 +55,8 @@ public interface DicService {
      *  @return the list of entities
      */
     Page<Dic> search(String query, Pageable pageable);
+    
+    Dic searchByDb(final SearchDic searchDic);
+    
+    DicType searchByDicTypeCodeAndDicCode(final String dicTypeCode, final String dicCode);
 }

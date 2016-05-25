@@ -1,89 +1,25 @@
 <div>
-    <h2 translate="istartApp.dicType.home.title">Dic Types</h2>
-    <jhi-alert></jhi-alert>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="dic-type.new" >
-                    <span class="glyphicon glyphicon-plus"></span>
-                    <span class="hidden-xs"  translate="istartApp.dicType.home.createLabel">
-                        Create new Dic Type
-                    </span>
-                </button>
-            </div>
-            <div class="col-xs-8 no-padding-right">
-                <form name="searchForm" class="form-inline">
-                    <div class="input-group pull-right" >
-                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'istartApp.dicType.home.search' | translate }}">
-                        <span  class="input-group-btn width-min" >
-                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
-                            <button class="btn btn-info" ng-click="vm.clear()">
-                                <span class="glyphicon glyphicon-trash"></span>
-                            </button>
-                        </span>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-    <br/>
-    <div class="table-responsive">
-        <table class="jh-table table table-striped">
-            <thead>
-                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
-                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dicTypeCode"><span translate="istartApp.dicType.dicTypeCode">Dic Type Code</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dicTypeName"><span translate="istartApp.dicType.dicTypeName">Dic Type Name</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dataCreator"><span translate="istartApp.dicType.dataCreator">Data Creator</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dataUpdater"><span translate="istartApp.dicType.dataUpdater">Data Updater</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dataCreateDatetime"><span translate="istartApp.dicType.dataCreateDatetime">Data Create Datetime</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dataUpdateDatetime"><span translate="istartApp.dicType.dataUpdateDatetime">Data Update Datetime</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="dataStatus"><span translate="istartApp.dicType.dataStatus">Data Status</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="dicType in vm.dicTypes track by dicType.id">
-                    <td><a ui-sref="dic-type-detail({id:dicType.id})">{{dicType.id}}</a></td>
-                    <td>{{dicType.dicTypeCode}}</td>
-                    <td>{{dicType.dicTypeName}}</td>
-                    <td>{{dicType.dataCreator}}</td>
-                    <td>{{dicType.dataUpdater}}</td>
-                    <td>{{dicType.dataCreateDatetime | date:'medium'}}</td>
-                    <td>{{dicType.dataUpdateDatetime | date:'medium'}}</td>
-                    <td>{{dicType.dataStatus}}</td>
-                    <td class="text-right">
-                        <div class="btn-group flex-btn-group-container">
-                            <button type="submit"
-                                    ui-sref="dic-type-detail({id:dicType.id})"
-                                    class="btn btn-info btn-sm">
-                                <span class="glyphicon glyphicon-eye-open"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="dic-type.edit({id:dicType.id})"
-                                    class="btn btn-primary btn-sm">
-                                <span class="glyphicon glyphicon-pencil"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
-                            </button>
-                            <button type="submit"
-                                    ui-sref="dic-type.delete({id:dicType.id})"
-                                    class="btn btn-danger btn-sm">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
-                            </button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <div class="text-center">
-        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
-        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
-    </div>
+	<h2 translate="istartApp.dicType.home.title">Dic Types</h2>
+	<jhi-alert></jhi-alert>
+	<br />
+	<div class="form-inline" role="form">
+		<div class="form-group">
+			<span>Offset: </span> <input name="offset" class="form-control w70" type="number" value="0">
+		</div>
+		<div class="form-group">
+			<span>Limit: </span> <input name="limit" class="form-control w70" type="number" value="5">
+		</div>
+		<div class="form-group">
+			<input name="search" class="form-control" type="text" placeholder="Search">
+		</div>
+		<button id="ok" type="submit" class="btn btn-default">OK</button>
+	</div>
+	<div id="toolbar">
+		<button class="btn btn-primary" ui-sref="dic-type.new">
+			<span class="glyphicon glyphicon-plus"></span> <span
+				class="hidden-xs" translate="istartApp.dicType.home.createLabel">
+				Create new Dic Type </span>
+		</button>
+	</div>
+	<table bs-table-control="vm.bsTableControl"></table>
 </div>

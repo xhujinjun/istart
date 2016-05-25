@@ -2,6 +2,8 @@ package com.istart.framework.domain;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.annotations.DynamicInsert;
+import org.hibernate.annotations.DynamicUpdate;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
@@ -17,6 +19,8 @@ import java.util.Objects;
 @Table(name = "version")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "version")
+@DynamicInsert
+@DynamicUpdate
 public class Version implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -35,7 +39,7 @@ public class Version implements Serializable {
     @Column(name = "deprecated")
     private Boolean deprecated;
 
-    @Column(name = "create_time")
+    @Column(name = "create_time",insertable=false,updatable=false)
     private ZonedDateTime createTime;
 
     @Column(name = "description")
