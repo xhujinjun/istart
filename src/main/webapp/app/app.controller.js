@@ -23,13 +23,13 @@ angular.module('istartApp')
           danger:  '#f05050',
           light:   '#e8eff0',
           dark:    '#3a3f51',
-          black:   '#1c2b36'
+          black:   '#e8eff0'//'#1c2b36'
         },
         settings: {
           themeID: 1,
           navbarHeaderColor: 'bg-black',
           navbarCollapseColor: 'bg-white-only',
-          asideColor: 'bg-black',
+          asideColor: 'bg-white-only',//'bg-black',
           headerFixed: true,
           asideFixed: false,
           asideFolded: false,

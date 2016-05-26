@@ -33,13 +33,13 @@
         <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div class="app" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}">
-    	<div ui-view="navbar" ng-cloak class="app-header navbar"></div>
+    	<!---->  <div ui-view="navbar" ng-cloak class="app-header navbar"></div>
     	<div ui-view="menu" ng-cloak class="app-aside hidden-xs {{app.settings.asideColor}}"></div>
     	<div class="well app-content" ui-view="content"></div>
   		<!-- footer -->
   		<div class="app-footer wrapper b-t bg-light">
     		<span class="pull-right">{{app.version}} <a href ui-scroll="app" class="m-l-sm text-muted"><i class="fa fa-long-arrow-up"></i></a></span>
-    		&copy; 2014 Copyright.
+    		&copy; 2016 Copyright.
   		</div>
   		<!-- / footer -->
   		<div data-ng-include=" 'app/layouts/navbar/settings.html' " class="settings panel panel-default"></div>

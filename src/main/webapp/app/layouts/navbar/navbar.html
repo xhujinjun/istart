@@ -1,7 +1,7 @@
 <!-- 导航 -->
 
-<!-- 开发环境标签 -->
-<div ng-show="{{ENV === 'dev'}}" class="development" ng-cloak></div>
+<!-- 开发环境标签 
+<div ng-show="{{ENV === 'dev'}}" class="development" ng-cloak></div>-->
 <div class="navbar-header  {{app.settings.navbarHeaderColor}}">
 	<button class="pull-right visible-xs dk" ui-toggle-class="show"
 		data-target=".navbar-collapse">
@@ -11,15 +11,15 @@
 		data-target=".app-aside" ui-scroll="app">
 		<i class="glyphicon glyphicon-align-justify"></i>
 	</button>
-	<!-- brand -->
+	<!-- brand 右侧数据-->
 	<a href="#/" class="navbar-brand text-lt"> <i class="fa fa-btc"></i>
 		<img src="content/images/logo.png" alt="." class="hide"> <span
 		class="hidden-folded m-l-xs">{{app.name}}</span>
-	</a>
+	</a> 
 </div>
 <div class="collapse navbar-collapse" id="navbar-collapse"
 	uib-collapse="vm.navCollapsed" ng-switch="vm.isAuthenticated()">
-	<!-- buttons -->
+	<!-- buttons 
 	<div class="nav navbar-nav hidden-xs">
 		<a href class="btn no-shadow navbar-btn"
 			ng-click="app.settings.asideFolded = !app.settings.asideFolded">
@@ -27,7 +27,7 @@
 		</a> <a href class="btn no-shadow navbar-btn" ui-toggle-class="show"
 			target="#aside-user"> <i class="icon-user fa-fw"></i>
 		</a>
-	</div>
+	</div>-->
 	<!-- / buttons -->
 
 	<!-- search form -->
@@ -98,7 +98,7 @@
 			</span>
 		</a>
 			<ul class="dropdown-menu" uib-dropdown-menu>
-				<li ui-sref-active="active"><a ui-sref="echarts"
+				<!-- <li ui-sref-active="active"><a ui-sref="echarts"
 					data-toggle="collapse" data-target=".navbar-collapse.in"><span
 						class="glyphicon glyphicon-asterisk"></span> &#xA0;<span>echarts</span></a></li>
 				<li ui-sref-active="active"><a ui-sref="author"
@@ -108,7 +108,7 @@
 				<li ui-sref-active="active"><a ui-sref="book"
 					data-toggle="collapse" data-target=".navbar-collapse.in"><span
 						class="glyphicon glyphicon-asterisk"></span> &#xA0;<span
-						translate="global.menu.entities.book">Book</span></a></li>
+						translate="global.menu.entities.book">Book</span></a></li> -->
 				<li ui-sref-active="active"><a ui-sref="role"
 					data-toggle="collapse" data-target=".navbar-collapse.in"><span
 						class="glyphicon glyphicon-asterisk"></span> &#xA0;<span
@@ -135,7 +135,7 @@
                                 <span translate="global.menu.entities.travelAgencyLine">Travel Agency Line</span>
                             </a>
                         </li>
-<li ui-sref-active="active" >
+<!--  <li ui-sref-active="active" >
                             <a ui-sref="dic-type" ng-click="vm.collapseNavbar()">
                                 <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
                                 <span translate="global.menu.entities.dicType">Dic Type</span>
@@ -146,17 +146,17 @@
                                 <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
                                 <span translate="global.menu.entities.dic">Dic</span>
                             </a>
-                        </li>
+                        </li>-->
 <li ui-sref-active="active" >
                             <a ui-sref="product" ng-click="vm.collapseNavbar()">
                                 <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
                                 <span translate="global.menu.entities.product">Product</span>
-                        <li ui-sref-active="active" >
+                       <!--  <li ui-sref-active="active" >
                             <a ui-sref="hotel" ng-click="vm.collapseNavbar()">
                                 <span class="glyphicon glyphicon-asterisk"></span>&nbsp;
                                 <span translate="global.menu.entities.hotel">Hotel</span>
                             </a>
-                        </li>
+                        </li> -->
 				<!-- jhipster-needle-add-entity-to-menu - JHipster will add entities to the menu here -->
 			</ul>
 		</li>

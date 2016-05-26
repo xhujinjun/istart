@@ -72,7 +72,10 @@ Browser Upgrade Prompt
     display: inline-block;
     width: 347px;
     height: 497px;
-    background: url("../images/hipster.png") no-repeat center top;
+   
+  /**
+    background: url("../images/hipster.png") no-repeat center top;*/
+     background: url("../images/56zu.jpg") no-repeat center top;
     background-size: contain;
 }
 
