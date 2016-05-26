@@ -7,8 +7,8 @@
             "DASHBOARD": "工作台",
             "CALENDAR": "工作日历",
             "HOTEL": "酒店",
-            "DIC": "字典",
-            "DICTYPE": "字典类型",
+            "DIC": "Dictionary",
+            "DICTYPE": "Dictionary Type",
             "EMAIL": "电子邮件",
             "components": {
                 "COMPONENTS": "组件",
