@@ -99,7 +99,17 @@ public class TravelAgencyResource {
 
 	/**
 	 * GET /travel-agencies : get all the travelAgencies.
-	 *
+	 * http://issues.wenzhixin.net.cn/examples/bootstrap_table/data?order=asc&offset=0&limit=10
+	 * {
+  "total": 800,
+  "rows": [
+    {
+      "id": 0,
+      "name": "Item 0",
+      "price": "$0"
+    }
+  ]
+}
 	 * @param pageable
 	 *            the pagination information
 	 * @return the ResponseEntity with status 200 (OK) and the list of

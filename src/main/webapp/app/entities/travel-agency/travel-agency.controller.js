@@ -38,7 +38,6 @@
         			url: '/api/travel-agencies',
                    /* data: vm.rows,*/
                     cache: false,
-//                    height: 400,
                     striped: true,
                     toolbar: '#toolbar',
                     search: true,
@@ -57,7 +56,7 @@
                     pageSize: 10,
                     pageList: [10, 25, 50, 100],
                     paginationVAlign: 'bottom',
-                    /*sidePagination: 'server',*/
+                    sidePagination: 'server',
                     	
                     rowStyle: rowStyle,
                     columns: [{
