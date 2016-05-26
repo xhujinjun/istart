@@ -92,7 +92,7 @@ public class AreaResource {
 
     /**
      * GET  /areas : get all the areas.
-     *
+     *  http://localhost:8080/api/areas?cacheBuster=1464244135970&page=0&size=20&sort=id,asc
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of areas in body
      * @throws URISyntaxException if there is an error to generate the pagination HTTP headers
