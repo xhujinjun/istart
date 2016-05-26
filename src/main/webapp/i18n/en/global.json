@@ -71,6 +71,7 @@
                 "dicType": "Dic Type",
                 "hotel": "Hotel",
                 "dic": "Dic",
+                "product": "Product",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

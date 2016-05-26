@@ -2,50 +2,27 @@
     <h2 translate="istartApp.travelAgency.home.title">Travel Agencies</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-4 no-padding-left">
-                <button class="btn btn-primary" ui-sref="travel-agency.new" >
+       <div class="form-inline" role="form">
+                <div class="form-group">
+                    <span>旅行社编号: </span>
+                    <input name="offset" class="form-control w70">
+                </div>
+                <div class="form-group">
+                    <span>旅行社名称: </span>
+                    <input name="limit" class="form-control w70">
+                </div>
+                <button id="ok" type="submit" class="btn btn-default">OK</button>
+            </div>
+    </div>
+    <br/>
+    <div id="toolbar">
+    	<button class="btn btn-primary" ui-sref="travel-agency.new" >
                     <span class="glyphicon glyphicon-plus"></span>
                     <span class="hidden-xs"  translate="istartApp.travelAgency.home.createLabel">
                         Create new Travel Agency
                     </span>
                 </button>
-            </div>
-           <div class="col-xs-8 no-padding-right">
-                <form name="searchForm" class="form-inline">
-                    <div class="input-group pull-right" >
-                        <input type="text" class="form-control" ng-model="vm.searchQuery" id="searchQuery" placeholder="{{ 'istartApp.travelAgency.home.search' | translate }}">
-                        <span  class="input-group-btn width-min" >
-                            <button class="btn btn-info" ng-click="vm.search(vm.searchQuery)">
-                                <span class="glyphicon glyphicon-search"></span>
-                            </button>
-                        </span>
-                        <span class="input-group-btn width-min" ng-if="vm.currentSearch">
-                            <button class="btn btn-info" ng-click="vm.clear()">
-                                <span class="glyphicon glyphicon-trash"></span>
-                            </button>
-                        </span>
-                    </div>
-                </form>
-            </div> 
-        </div>
-    </div>
-    <br/>
-    <div id="toolbar">
-            <div class="form-inline" role="form">
-                <div class="form-group">
-                    <span>Offset: </span>
-                    <input name="offset" class="form-control w70" type="number" value="0">
-                </div>
-                <div class="form-group">
-                    <span>Limit: </span>
-                    <input name="limit" class="form-control w70" type="number" value="5">
-                </div>
-                <div class="form-group">
-                    <input name="search" class="form-control" type="text" placeholder="Search">
-                </div>
-                <button id="ok" type="submit" class="btn btn-default">OK</button>
-            </div>
+            
     </div>
     <table bs-table-control="vm.bsTableControl"></table>
 </div>

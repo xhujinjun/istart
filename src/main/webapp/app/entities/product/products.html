@@ -1,0 +1,112 @@
+<div>
+    <h2 translate="istartApp.product.home.title">Products</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="product.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  translate="istartApp.product.home.createLabel">
+                        Create new Product
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div id="toolbar" style="display:inline">
+            <div class="form-inline" role="form" style="white-spacing:nowrap;">
+                <div class="form-group">
+                    <span translate="istartApp.product.start">start: </span>
+                    <input id="start"  name="start" class="form-control w70" type="text">
+                </div>
+                <div class="form-group">
+                    <span translate="istartApp.product.price">price: </span>
+                    <input name="price"  id="price" class="form-control w70" type="number" >
+                </div>
+                <div class="form-group" >
+                 <span translate="istartApp.product.startdate">startdate: </span>
+                    <input type="text"  id="startdate"  class="form-control" name="startdate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.product.startdate" is-open="vm.datePickerOpenStatus.startdate"
+                    />
+                 </div>
+                 <div class="form-group" >
+                  <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startdate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                 </div>
+                   <button id="ok" ng-click="vm.Pagesearch()" translate="istartApp.product.home.search"  class="btn btn-default">Search</button>
+            </div>
+    </div>
+    <div class="table-responsive">
+        <table style="table-layout: fixed"  class="jh-table table table-striped">
+            <thead>
+                <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
+                    <th style="display:none;" jh-sort-by="id"><span translate="global.field.id">ID</span> </th>
+                    <th  width="8%" jh-sort-by="pno"><span translate="istartApp.product.pno">Pno</span> </th>
+                    <th width="6%" jh-sort-by="title"><span translate="istartApp.product.title">Title</span> </th>
+                    <th width="6%" jh-sort-by="price"><span translate="istartApp.product.price">Price</span> </th>
+                    <th width="8%" jh-sort-by="pricedesc"><span translate="istartApp.product.pricedesc">Pricedesc</span></th>
+                    <th style="display:none;" jh-sort-by="preferential"><span translate="istartApp.product.preferential">Preferential</span></th>
+                    <th width="8%" jh-sort-by="costdesc"><span translate="istartApp.product.costdesc">Costdesc</span></th>
+                    <th width="8%" jh-sort-by="trip"><span translate="istartApp.product.trip">Trip</span></th>
+                    <th width="7%" jh-sort-by="start"><span translate="istartApp.product.start">Start</span></th>
+                    <th width="8%" jh-sort-by="route"><span translate="istartApp.product.route">Route</span></th>
+                    <th width="8%" jh-sort-by="prodesc"><span translate="istartApp.product.prodesc">Prodesc</span></th>
+                    <th style="display:none;" jh-sort-by="rate"><span translate="istartApp.product.rate">Rate</span> </th>
+                    <th style="display:none;" jh-sort-by="state"><span translate="istartApp.product.state">State</span> </th>
+                    <th width="6%" jh-sort-by="type"><span translate="istartApp.product.type">Type</span></th>
+                    <th width="6%" jh-sort-by="days"><span translate="istartApp.product.days">Days</span></th>
+                    <th width="12%" jh-sort-by="startdate"><span translate="istartApp.product.startdate">Startdate</span></th>
+                    <th style="display:none;" jh-sort-by="pics"><span translate="istartApp.product.pics">Pics</span></th>
+                    <th width="22%" class="text-center"><span translate="istartApp.product.home.operate">operate</span> </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="product in vm.products track by product.id">
+                    <td style="display:none;"><a ui-sref="product-detail({id:product.id})">{{product.id}}</a></td>
+                    <td>{{product.pno}}</td>
+                    <td style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{product.title}}</td>
+                    <td>{{product.price}}</td>
+                    <td style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{product.pricedesc}}</td>
+                    <td style="display:none;">{{product.preferential}}</td>
+                    <td style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{product.costdesc}}</td>
+                    <td style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{product.trip}}</td>
+                    <td>{{product.start}}</td>
+                    <td style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{product.route}}</td>
+                    <td style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">{{product.prodesc}}</td>
+                    <td style="display:none;">{{product.rate}}</td>
+                    <td style="display:none;">{{product.state}}</td>
+                    <td>{{product.type}}</td>
+                    <td>{{product.days}}</td>
+                        <td>{{product.startdate | date:'mediumDate'}}</td>
+                    <td style="display:none;">{{product.pics}}</td>
+                    <td class="text-right">
+                        <div class="btn-group "> 
+<!--                         <div class="btn-group flex-btn-group-container">  -->
+                            <button type="submit"
+                                    ui-sref="product-detail({id:product.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.view"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="product.edit({id:product.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.edit"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="product.delete({id:product.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm" translate="entity.action.delete"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="text-center">
+        <jhi-item-count page="vm.page" total="vm.queryCount"></jhi-item-count>
+        <uib-pagination class="pagination-sm" total-items="vm.totalItems" ng-model="vm.page" ng-change="vm.transition()"></uib-pagination>
+    </div>
+</div>

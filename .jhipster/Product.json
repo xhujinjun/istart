@@ -1,0 +1,75 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "pno",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "pricedesc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "preferential",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "costdesc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "trip",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "start",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "route",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "prodesc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startdate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "pics",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "days",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160522121220",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "product",
+    "pagination": "pagination"
+}

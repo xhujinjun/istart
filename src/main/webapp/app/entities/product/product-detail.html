@@ -1,0 +1,78 @@
+
+<div>
+    <h2><span translate="istartApp.product.detail.title">Product</span> {{vm.product.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="istartApp.product.pno">Pno</span></dt>
+        <dd>
+            <span>{{vm.product.pno}}</span>
+        </dd>
+        <dt><span translate="istartApp.product.title">Title</span></dt>
+        <dd>
+            <span>{{vm.product.title}}</span>
+        </dd>
+        <dt><span translate="istartApp.product.price">Price</span></dt>
+        <dd>
+            <span>{{vm.product.price}}</span>
+        </dd>
+        <dt><span translate="istartApp.product.pricedesc">Pricedesc</span></dt>
+        <dd>
+            <span>{{vm.product.pricedesc}}</span>
+        </dd>
+        <dt><span translate="istartApp.product.preferential">Preferential</span></dt>
+        <dd>
+            <span>{{vm.product.preferential}}</span>
+        </dd>
+        <dt><span translate="istartApp.product.costdesc">Costdesc</span></dt>
+        <dd>
+            <span>{{vm.product.costdesc}}</span>
+        </dd>
+        <dt><span translate="istartApp.product.trip">Trip</span></dt>
+        <dd>
+            <span>{{vm.product.trip}}</span>
+        </dd>
+        <dt><span translate="istartApp.product.start">Start</span></dt>
+        <dd>
+            <span>{{vm.product.start}}</span>
+        </dd>
+        <dt><span translate="istartApp.product.route">Route</span></dt>
+        <dd>
+            <span>{{vm.product.route}}</span>
+        </dd>
+        <dt><span translate="istartApp.product.prodesc">Prodesc</span></dt>
+        <dd>
+            <span>{{vm.product.prodesc}}</span>
+        </dd>
+        <dt><span translate="istartApp.product.rate">Rate</span></dt>
+        <dd>
+            <span>{{vm.product.rate}}</span>
+        </dd>
+        <dt><span translate="istartApp.product.state">State</span></dt>
+        <dd>
+            <span>{{vm.product.state}}</span>
+        </dd>
+        <dt><span translate="istartApp.product.type">Type</span></dt>
+        <dd>
+            <span>{{vm.product.type}}</span>
+        </dd>
+        <dt><span translate="istartApp.product.startdate">Startdate</span></dt>
+        <dd>
+            <span>{{vm.product.startdate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="istartApp.product.pics">Pics</span></dt>
+        <dd>
+            <span>{{vm.product.pics}}</span>
+        </dd>
+        <dt><span translate="istartApp.product.days">Days</span></dt>
+        <dd>
+            <span>{{vm.product.days}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

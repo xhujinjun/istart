@@ -1,0 +1,38 @@
+{
+    "istartApp": {
+        "product" : {
+            "home": {
+                "title": "自驾游",
+                "createLabel": "发布自驾游信息",
+                "createOrEditLabel": "查询",
+                "search": "查询",
+                "operate":"操       作"
+            },
+            "created": "A new Product is created with identifier {{ param }}",
+            "updated": "A Product is updated with identifier {{ param }}",
+            "deleted": "A Product is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Product {{ id }}?"
+            },
+            "detail": {
+                "title": "Product"
+            },
+            "pno": "产品编号",
+            "title": "标题",
+            "price": "价格",
+            "pricedesc": "起价说明",
+            "preferential": "优惠信息",
+            "costdesc": "费用说明",
+            "trip": "行程介绍",
+            "start": "出发地",
+            "route": "路线",
+            "prodesc": "产品描述",
+            "rate": "好评率",
+            "state": "状态",
+            "type": "类型",
+            "startdate": "出发日期",
+            "pics": "图片",
+            "days": "天数"
+        }
+    }
+}

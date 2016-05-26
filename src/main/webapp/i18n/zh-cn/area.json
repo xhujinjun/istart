@@ -2,10 +2,10 @@
     "istartApp": {
         "area" : {
             "home": {
-                "title": "Areas",
-                "createLabel": "Create a new Area",
-                "createOrEditLabel": "Create or edit a Area",
-                "search": "Search for Area"
+                "title": "地域管理",
+                "createLabel": "新增地域",
+                "createOrEditLabel": "新增或编辑地域",
+                "search": "检索地域"
             },
             "created": "A new Area is created with identifier {{ param }}",
             "updated": "A Area is updated with identifier {{ param }}",
@@ -16,16 +16,16 @@
             "detail": {
                 "title": "Area"
             },
-            "areaid": "Areaid",
-            "name": "Name",
-            "parentid": "Parentid",
-            "parentname": "Parentname",
-            "addr": "Addr",
-            "level": "Level",
-            "isleaf": "Isleaf",
-            "createDatetime": "CreateDatetime",
-            "modifiyDatetime": "ModifiyDatetime",
-            "status": "Status"
+            "areaid": "地域编码",
+            "name": "名称",
+            "parentid": "父地域编码",
+            "parentname": "父地域名称",
+            "addr": "地域简称",
+            "level": "地域级别",
+            "isleaf": "叶子节点",
+            "createDatetime": "数据创建时间",
+            "modifiyDatetime": "数据更新时间",
+            "status": "数据状态"
         }
     }
 }

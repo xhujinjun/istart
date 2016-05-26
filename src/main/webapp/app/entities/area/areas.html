@@ -45,7 +45,6 @@
                     <th jh-sort-by="isleaf"><span translate="istartApp.area.isleaf">Isleaf</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="createDatetime"><span translate="istartApp.area.createDatetime">CreateDatetime</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="modifiyDatetime"><span translate="istartApp.area.modifiyDatetime">ModifiyDatetime</span> <span class="glyphicon glyphicon-sort"></span></th>
-                    <th jh-sort-by="status"><span translate="istartApp.area.status">Status</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th></th>
                 </tr>
             </thead>
@@ -61,7 +60,6 @@
                     <td>{{area.isleaf}}</td>
                     <td>{{area.createDatetime | date:'medium'}}</td>
                     <td>{{area.modifiyDatetime | date:'medium'}}</td>
-                    <td translate="{{'istartApp.DataStatus.' + area.status}}">{{area.status}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

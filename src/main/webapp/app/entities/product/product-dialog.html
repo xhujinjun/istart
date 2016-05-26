@@ -1,0 +1,126 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myProductLabel" translate="istartApp.product.home.createOrEditLabel">Create or edit a Product</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.product.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.product.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.product.pno" for="field_pno">Pno</label>
+            <input type="text" class="form-control" name="pno" id="field_pno"
+                    ng-model="vm.product.pno"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.product.title" for="field_title">Title</label>
+            <input type="text" class="form-control" name="title" id="field_title"
+                    ng-model="vm.product.title"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.product.price" for="field_price">Price</label>
+            <input type="number" class="form-control" name="price" id="field_price"
+                    ng-model="vm.product.price"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.product.pricedesc" for="field_pricedesc">Pricedesc</label>
+            <input type="text" class="form-control" name="pricedesc" id="field_pricedesc"
+                    ng-model="vm.product.pricedesc"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.product.preferential" for="field_preferential">Preferential</label>
+            <input type="text" class="form-control" name="preferential" id="field_preferential"
+                    ng-model="vm.product.preferential"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.product.costdesc" for="field_costdesc">Costdesc</label>
+            <input type="text" class="form-control" name="costdesc" id="field_costdesc"
+                    ng-model="vm.product.costdesc"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.product.trip" for="field_trip">Trip</label>
+            <input type="text" class="form-control" name="trip" id="field_trip"
+                    ng-model="vm.product.trip"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.product.start" for="field_start">Start</label>
+            <input type="text" class="form-control" name="start" id="field_start"
+                    ng-model="vm.product.start"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.product.route" for="field_route">Route</label>
+            <input type="text" class="form-control" name="route" id="field_route"
+                    ng-model="vm.product.route"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.product.prodesc" for="field_prodesc">Prodesc</label>
+            <input type="text" class="form-control" name="prodesc" id="field_prodesc"
+                    ng-model="vm.product.prodesc"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.product.rate" for="field_rate">Rate</label>
+            <input type="text" class="form-control" name="rate" id="field_rate"
+                    ng-model="vm.product.rate"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.product.state" for="field_state">State</label>
+            <input type="text" class="form-control" name="state" id="field_state"
+                    ng-model="vm.product.state"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.product.type" for="field_type">Type</label>
+            <input type="text" class="form-control" name="type" id="field_type"
+                    ng-model="vm.product.type"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.product.startdate" for="field_startdate">Startdate</label>
+                <div class="input-group">
+                    <input id="field_startdate" type="text" class="form-control" name="startdate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.product.startdate" is-open="vm.datePickerOpenStatus.startdate"
+                    />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startdate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.product.pics" for="field_pics">Pics</label>
+            <input type="text" class="form-control" name="pics" id="field_pics"
+                    ng-model="vm.product.pics"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.product.days" for="field_days">Days</label>
+            <input type="number" class="form-control" name="days" id="field_days"
+                    ng-model="vm.product.days"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>
