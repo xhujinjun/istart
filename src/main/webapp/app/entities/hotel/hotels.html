@@ -35,7 +35,8 @@
         <table class="jh-table table table-striped">
             <thead>
                 <tr jh-sort="vm.predicate" ascending="vm.reverse" callback="vm.transition()">
-                    <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                <th jh-sort-by="id"><span translate="global.field.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
+                    <th jh-sort-by="id"><span translate="istartApp.hotel.id">ID</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="name"><span translate="istartApp.hotel.name">name</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="level"><span translate="istartApp.hotel.level">level</span> <span class="glyphicon glyphicon-sort"></span></th>
                     <th jh-sort-by="score"><span translate="istartApp.hotel.score">score</span> <span class="glyphicon glyphicon-sort"></span></th>
@@ -51,7 +52,7 @@
                     <td>{{hotel.name}}</td>
                     <td>{{hotel.level}}</td>
                     <td>{{hotel.score}}</td>
-                    <td>{{hotel.status}</td>
+                    <td>{{hotel.status}}</td>
                     <td class="text-right">
                         <div class="btn-group flex-btn-group-container">
                             <button type="submit"

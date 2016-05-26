@@ -1,10 +1,26 @@
 {
     "istartApp": {
-        "hotel" : {
-            "name": "Data Updater",
-            "id": "Data Create Datetime",
-            "level": "Data Update Datetime",
-            "status": "Data Status"
+         "hotel" : {
+	        "home": {
+	                "title": "酒店管理",
+	                "createLabel": "新增酒店",
+	                "createOrEditLabel": "新增或编辑",
+	                "search": "查找酒店"
+	            },
+	            "created": "已经新增了一个酒店，ID {{ param }}",
+	            "updated": "A Hotel is updated with identifier {{ param }}",
+	            "deleted": "A Hotel is deleted with identifier {{ param }}",
+	            "delete": {
+	                "question": "Are you sure you want to delete Hotel {{ id }}?"
+	            },
+	            "detail": {
+	                "title": "酒店"
+	            },
+            "id": "酒店ID",
+            "name": "酒店名称",
+            "level": "酒店星级",
+            "score": "酒店评分",
+            "status":"酒店状态"
         }
     }
 }

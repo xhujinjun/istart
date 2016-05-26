@@ -51,6 +51,39 @@
                 }]
             }
         })
+        .state('hotel.new', {
+            parent: 'hotel',
+            url: '/new',
+            data: {
+                authorities: ['ROLE_USER']
+            },
+            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                $uibModal.open({
+                    templateUrl: 'app/entities/hotel/hotel-dialog.html',
+                    controller: 'HotelDialogController',
+                    controllerAs: 'vm',
+                    backdrop: 'static',
+                    size: 'lg',
+                    resolve: {
+                        entity: function () {
+                            return {
+                                agencyCode: null,
+                                agencyName: null,
+                                agencyIntroduce: null,
+                                addr: null,
+                                buildDate: null,
+                                contactPhone: null,
+                                id: null
+                            };
+                        }
+                    }
+                }).result.then(function() {
+                    $state.go('hotel', null, { reload: true });
+                }, function() {
+                    $state.go('hotel');
+                });
+            }]
+        })
     }
 
 })();
