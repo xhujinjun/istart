@@ -5,6 +5,8 @@ import com.istart.framework.domain.Dic;
 import com.istart.framework.service.DicService;
 import com.istart.framework.web.rest.util.HeaderUtil;
 import com.istart.framework.web.rest.util.PaginationUtil;
+import com.istart.framework.web.rest.base.BaseResource;
+import com.istart.framework.web.rest.base.Pager;
 import com.istart.framework.web.rest.dto.DicDTO;
 import com.istart.framework.web.rest.mapper.DicMapper;
 import com.istart.framework.web.rest.search.SearchDic;
@@ -36,7 +38,7 @@ import static org.elasticsearch.index.query.QueryBuilders.*;
  */
 @RestController
 @RequestMapping("/api")
-public class DicResource {
+public class DicResource extends BaseResource{
 
     private final Logger log = LoggerFactory.getLogger(DicResource.class);
         
@@ -99,7 +101,7 @@ public class DicResource {
      * @return the ResponseEntity with status 200 (OK) and the list of dics in body
      * @throws URISyntaxException if there is an error to generate the pagination HTTP headers
      */
-    @RequestMapping(value = "/dics",
+    @RequestMapping(value = "/dics/get",
         method = RequestMethod.GET,
         produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
@@ -111,6 +113,22 @@ public class DicResource {
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/dics");
         return new ResponseEntity<>(dicMapper.dicsToDicDTOs(page.getContent()), headers, HttpStatus.OK);
     }
+    
+    @RequestMapping(value = "/dics",
+        method = RequestMethod.GET,
+        produces = MediaType.APPLICATION_JSON_VALUE)
+    @Timed
+    @Transactional(readOnly = true)
+    public ResponseEntity<Pager<DicDTO>> getAllDics(int limit,int offset,String sort,String order,SearchDic searchDic)
+        throws URISyntaxException {
+    	Pageable pageable = this.toPageable(limit, offset, sort, order);
+        log.debug("REST request to get a page of Dics");
+        Page<Dic> page = dicService.findByPageSearcg(searchDic,pageable); 
+        HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/dics");
+        
+        Pager<DicDTO> pagerDto = new Pager<>(dicMapper.dicsToDicDTOs(page.getContent()),page.getTotalElements());
+        return new ResponseEntity<>(pagerDto, headers, HttpStatus.OK);
+        }
 
     /**
      * GET  /dics/:id : get the "id" dic.

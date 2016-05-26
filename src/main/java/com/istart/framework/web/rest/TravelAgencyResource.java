@@ -7,10 +7,16 @@ import java.util.Optional;
 
 import javax.inject.Inject;
 
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.data.domain.Sort.Order;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -26,6 +32,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.codahale.metrics.annotation.Timed;
 import com.istart.framework.domain.TravelAgency;
 import com.istart.framework.service.TravelAgencyService;
+import com.istart.framework.web.rest.base.BaseResource;
+import com.istart.framework.web.rest.base.Pager;
 import com.istart.framework.web.rest.dto.TravelAgencyDTO;
 import com.istart.framework.web.rest.mapper.TravelAgencyMapper;
 import com.istart.framework.web.rest.util.HeaderUtil;
@@ -36,7 +44,7 @@ import com.istart.framework.web.rest.util.PaginationUtil;
  */
 @RestController
 @RequestMapping("/api")
-public class TravelAgencyResource {
+public class TravelAgencyResource extends BaseResource{
 
 	private final Logger log = LoggerFactory.getLogger(TravelAgencyResource.class);
 
@@ -117,7 +125,7 @@ public class TravelAgencyResource {
 	 * @throws URISyntaxException
 	 *             if there is an error to generate the pagination HTTP headers
 	 */
-	@RequestMapping(value = "/travel-agencies", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/travel-agencies/get", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@Timed
 	@Transactional(readOnly = true)
 	public ResponseEntity<List<TravelAgencyDTO>> getAllTravelAgencies(Pageable pageable) throws URISyntaxException {
@@ -126,6 +134,23 @@ public class TravelAgencyResource {
 		Page<TravelAgency> page = travelAgencyService.findAll(pageable);
 		HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/travel-agencies");
 		return new ResponseEntity<>(travelAgencyMapper.travelAgenciesToTravelAgencyDTOs(page.getContent()), headers,
+				HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/travel-agencies", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@Timed
+	@Transactional(readOnly = true)
+	public ResponseEntity<Pager<TravelAgencyDTO>> getAllTravelAgencies(int limit,int offset,String sort,String order) throws URISyntaxException {
+		Pageable pageable = this.toPageable(limit, offset, sort, order);
+		
+		log.debug("REST request to get a page of TravelAgencies");
+		System.out.println("----------travel-agencies------");
+		Page<TravelAgency> page = travelAgencyService.findAll(pageable);
+		HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/travel-agencies");
+		
+		Pager<TravelAgencyDTO> pageDto = new Pager<TravelAgencyDTO>(travelAgencyMapper.travelAgenciesToTravelAgencyDTOs(page.getContent()),
+				page.getTotalElements());
+		return new ResponseEntity<>(pageDto, headers,
 				HttpStatus.OK);
 	}
 
