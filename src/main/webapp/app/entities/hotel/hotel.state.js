@@ -51,6 +51,30 @@
                 }]
             }
         })
+         .state('hotel-detail', {
+            parent: 'entity',
+            url: '/hotel/{id}',
+            data: {
+                authorities: ['ROLE_USER'],
+                pageTitle: 'istartApp.hotel.detail.title'
+            },
+            views: {
+                'content@': {
+                    templateUrl: 'app/entities/hotel/hotel-detail.html',
+                    controller: 'HotelDetailController',
+                    controllerAs: 'vm'
+                }
+            },
+            resolve: {
+                translatePartialLoader: ['$translate', '$translatePartialLoader', function ($translate, $translatePartialLoader) {
+                    $translatePartialLoader.addPart('hotel');
+                    return $translate.refresh();
+                }],
+                entity: ['$stateParams', 'Hotel', function($stateParams, Book) {
+                    return Book.get({id : $stateParams.id});
+                }]
+            }
+        })
         .state('hotel.new', {
             parent: 'hotel',
             url: '/new',
@@ -84,6 +108,30 @@
                 });
             }]
         })
+        .state('hotel.delete', {
+            parent: 'hotel',
+            url: '/{id}/delete',
+            data: {
+                authorities: ['ROLE_USER']
+            },
+            onEnter: ['$stateParams', '$state', '$uibModal', function($stateParams, $state, $uibModal) {
+                $uibModal.open({
+                    templateUrl: 'app/entities/hotel/hotel-delete-dialog.html',
+                    controller: 'DicDeleteController',
+                    controllerAs: 'vm',
+                    size: 'md',
+                    resolve: {
+                        entity: ['Dic', function(Dic) {
+                            return Dic.get({id : $stateParams.id});
+                        }]
+                    }
+                }).result.then(function() {
+                    $state.go('hotel', null, { reload: true });
+                }, function() {
+                    $state.go('^');
+                });
+            }]
+        });
     }
 
 })();

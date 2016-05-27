@@ -17,11 +17,16 @@
          
             $scope.levels =
             [
-                "Five Star",
-                "Four Star",
-                "Three Star",
-                "Two Star"
+                {type:5,typeName:"Five Star"},
+                {type:4,typeName:"Four Star"},
+                {type:3,typeName:"Three Star"},
+                {type:2,typeName:"Two Star"}
             ];
+            
+           
+        	$http.get("welcome.htm").then(function (response) {
+        		 $scope.levels = response.data;
+            });
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();
         });

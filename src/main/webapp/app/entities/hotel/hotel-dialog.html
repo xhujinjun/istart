@@ -21,20 +21,22 @@
         </div>
         <div class="form-group">
             <label class="control-label" translate="istartApp.hotel.level" for="field_level">Hotel Level</label>
-            <select ng-options="level for level in levels" class="form-control" name="level" id="field_level"
+            <select class="form-control" name="level" id="field_level"
                     ng-model="vm.hotel.level"
-                     ></select>
+                     >
+                  <option ng-repeat="x in levels" value="{{x.type}}">{{x.typeName}}</option>   
+            </select>
         </div>
         <div class="form-group">
-            <label class="control-label" translate="istartApp.travelAgency.agencyIntroduce" for="field_agencyIntroduce">Agency Introduce</label>
-            <input type="text" class="form-control" name="agencyIntroduce" id="field_agencyIntroduce"
-                    ng-model="vm.travelAgency.agencyIntroduce"
+            <label class="control-label" translate="istartApp.hotel.status" for="field_status">Hotel status</label>
+            <input type="text" class="form-control" name="status" id="field_status"
+                    ng-model="vm.hotel.status"
                      />
         </div>
         <div class="form-group">
-            <label class="control-label" translate="istartApp.travelAgency.addr" for="field_addr">Addr</label>
-            <input type="text" class="form-control" name="addr" id="field_addr"
-                    ng-model="vm.travelAgency.addr"
+            <label class="control-label" translate="istartApp.hotel.desc" for="field_Desc">Desc</label>
+            <input type="text" class="form-control" name="desc" id="field_desc"
+                    ng-model="vm.hotel.desc"
                      />
         </div>
         <div class="form-group">

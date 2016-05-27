@@ -1,0 +1,58 @@
+
+<div>
+    <h2><span translate="istartApp.hotel.detail.title">Dic</span> {{vm.hotel.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="istartApp.hotel.dicType">Dic Type</span></dt>
+        <dd>
+            <a ui-sref="hotel-type-detail({id:vm.hotel.dicTypeId})">{{vm.hotel.dicTypeName}}</a>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.hotel.dicCode">Dic Code</span></dt>
+        <dd>
+            <span>{{vm.hotel.dicCode}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.hotel.dicName">Dic Name</span></dt>
+        <dd>
+            <span>{{vm.hotel.dicName}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.hotel.dicNameDefinition">Dic Name Definition</span></dt>
+        <dd>
+            <span>{{vm.hotel.dicNameDefinition}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.hotel.dataCreator">Data Creator</span></dt>
+        <dd>
+            <span>{{vm.hotel.dataCreator}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.hotel.dataUpdater">Data Updater</span></dt>
+        <dd>
+            <span>{{vm.hotel.dataUpdater}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.hotel.dataCreateDatetime">Data Create Datetime</span></dt>
+        <dd>
+            <span>{{vm.hotel.dataCreateDatetime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.hotel.dataUpdateDatetime">Data Update Datetime</span></dt>
+        <dd>
+            <span>{{vm.hotel.dataUpdateDatetime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.hotel.dataStatus">Data Status</span></dt>
+        <dd>
+            <span>{{vm.hotel.dataStatus}}</span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
