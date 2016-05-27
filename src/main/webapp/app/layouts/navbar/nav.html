@@ -44,41 +44,6 @@
       <span class="font-bold" translate="global.nav.EMAIL">Email</span>
     </a>
   </li>
-  <li ui-sref-active="active">
-    <a ui-sref="hotel">
-      <b class="badge bg-info pull-right">1</b>
-      <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
-      <span class="font-bold" translate="global.nav.HOTEL">Hotel</span>
-    </a>
-  </li>
-  <li ui-sref-active="active">
-    <a ui-sref="dic-type">
-      <b class="badge bg-info pull-right">1</b>
-      <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
-      <span class="font-bold" translate="global.nav.DICTYPE">Dic Type</span>
-    </a>
-  </li>
-  <li ui-sref-active="active">
-    <a ui-sref="dic-type">
-      <b class="badge bg-info pull-right">1</b>
-      <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
-      <span class="font-bold" translate="global.nav.DICTYPE">Dic Type</span>
-    </a>
-  </li>
-  <li ui-sref-active="active">
-    <a ui-sref="dic">
-      <b class="badge bg-info pull-right">1</b>
-      <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
-      <span class="font-bold" translate="global.nav.DIC">Dic</span>
-    </a>
-  </li>
-  <li ui-sref-active="active">
-    <a ui-sref="dic-type">
-      <b class="badge bg-info pull-right">1</b>
-      <i class="glyphicon glyphicon-envelope icon text-info-lter"></i>
-      <span class="font-bold" translate="global.nav.DICTYPE">Dic Type</span>
-    </a>
-  </li>
   <li>
     <a href class="auto">
       <span class="pull-right text-muted">
@@ -114,9 +79,92 @@
 
   <li class="line dk"></li>
   <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-    <span translate="global.nav.components.COMPONENTS">功能列表</span>
+    <span translate="global.nav.components.BUSINESS">business</span>
   </li>
-  
+  <!-- 元数据管理 -->
+  <li>
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-th-large icon text-success"></i>
+      <span class="font-bold">元数据管理</span>
+    </a>
+     <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>元数据管理</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="dic-type">
+          <span class="font-bold" translate="global.nav.DICTYPE">Dic Type</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="dic">
+          <span class="font-bold" translate="global.nav.DIC">Dic</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+  <!-- 酒店管理 -->
+  <li>
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-th-large icon text-success"></i>
+      <span class="font-bold">酒店管理</span>
+    </a>
+     <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>酒店管理</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="hotel">
+          <span class="font-bold" translate="global.nav.HOTEL">Hotel</span>
+        </a>
+      </li>
+    </ul>
+  </li>
+    <!-- 旅游管理 -->
+  <li>
+    <a href class="auto">
+      <span class="pull-right text-muted">
+        <i class="fa fa-fw fa-angle-right text"></i>
+        <i class="fa fa-fw fa-angle-down text-active"></i>
+      </span>
+      <i class="glyphicon glyphicon-th-large icon text-success"></i>
+      <span class="font-bold">旅游管理</span>
+    </a>
+     <ul class="nav nav-sub dk">
+      <li class="nav-sub-header">
+        <a href>
+          <span>旅游管理</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="travel-agency">
+          <span class="font-bold" translate="global.menu.entities.travelAgency">Travel Agency</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="travel-agency-line">
+          <span class="font-bold" translate="global.menu.entities.travelAgencyLine">Travel Agency Line</span>
+        </a>
+      </li>
+      <li ui-sref-active="active">
+        <a ui-sref="product">
+          <span class="font-bold" translate="global.menu.entities.product">Product</span>
+        </a>
+      </li>
+    </ul>
+  </li>
   <li class="line dk"></li>
   <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
     <span translate="global.nav.components.COMPONENTS">Components</span>

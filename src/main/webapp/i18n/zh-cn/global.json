@@ -12,6 +12,7 @@
             "EMAIL": "电子邮件",
             "WIDGETS": "WIDGETS",
             "components": {
+            	"BUSINESS": "业务功能",
                 "COMPONENTS": "组件",
                 "ui_kits":{
                     "UI_KITS": "UI",
