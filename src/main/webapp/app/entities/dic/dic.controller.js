@@ -31,6 +31,7 @@
                     pageSize: 10,
                     pageList: [10, 25, 50, 100, 200],
                     paginationVAlign: 'bottom',
+                    sidePagination: 'server',
                     rowStyle: rowStyle,
                     columns: [{
                         field: 'state',
