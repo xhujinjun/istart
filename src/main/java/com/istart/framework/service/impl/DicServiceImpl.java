@@ -149,11 +149,21 @@ public class DicServiceImpl implements DicService{
 					Path<String> expDicTypeCode = join.get("dicTypeCode");
 					list.add(cb.equal(expDicTypeCode, dicTypeCode));
 				}
+				String dicTypeName = searchDic.getDicTypeName();
+				if(StringUtils.isNoneBlank(dicTypeName)){
+					Path<String> expDicTypeName = join.get("dicTypeName");
+					list.add(cb.equal(expDicTypeName, dicTypeName));
+				}
 				
 				String dicCode = searchDic.getDicCode();
 				if (StringUtils.isNoneBlank(dicCode)) {
 					Path<String> expDicCode = root.get("dicCode");
 					list.add(cb.equal(expDicCode, dicCode));
+				}
+				String dicName = searchDic.getDicName();
+				if (StringUtils.isNoneBlank(dicName)) {
+					Path<String> expDicName = root.get("dicName");
+					list.add(cb.equal(expDicName, dicName));
 				}
 				
 				list.add(cb.equal(root.get("dataStatus"), "1"));

@@ -12,11 +12,10 @@
         vm.bsTableControl = {
         		options: {
         			url: '/api/dics',
-                   /* data: vm.rows,*/
                     cache: false,
                     striped: true,
                     toolbar: '#toolbar',
-                    search: true,
+                    search: false,
                     showRefresh: true,
                     showToggle: true,
                     showColumns: true,
@@ -26,13 +25,22 @@
                     minimumCountColumns: 2,
                     clickToSelect: true,
                     maintainSelected: true,
+                    striped: true,//隔行变色效果
+                    queryParamsType: 'limit',
+                    queryParams: queryParams,
+                    
                     pagination: true,
                     idField: 'id',
                     pageSize: 10,
                     pageList: [10, 25, 50, 100, 200],
                     paginationVAlign: 'bottom',
                     sidePagination: 'server',
-                    rowStyle: rowStyle,
+                    paginationFirstText: 'First', 
+                    paginationPreText: 'Previous',
+                    paginationNextText: 'Next',
+                    paginationLastText: 'Last',
+                    
+                   /* rowStyle: rowStyle,*/
                     columns: [{
                         field: 'state',
                         checkbox: true
@@ -41,60 +49,70 @@
                         title: '字典类型编码',
                         align: 'left',
                         valign: 'middle',
-                        sortable: true
+                        sortable: true,
+                        width: '10%'
                     }, {
                         field: 'dicTypeName',
                         title: '字典类型',
                         align: 'left',
                         valign: 'middle',
-                        sortable: true
+                        sortable: true,
+                        width: '10%'
                     }, {
                         field: 'dicCode',
                         title: '字典编码',
                         align: 'left',
                         valign: 'top',
-                        sortable: true
+                        sortable: true,
+                        width: '10%'
                     }, {
                         field: 'dicName',
                         title: '字典名称',
                         align: 'left',
                         valign: 'top',
-                        sortable: true
+                        sortable: true,
+                        width: '10%'
                     }, {
                         field: 'dicNameDefinition',
                         title: '字典定义',
                         align: 'left',
                         valign: 'top',
-                        sortable: true
+                        sortable: true,
+                        width: '10%'
                     }, {
                         field: 'dataCreator',
                         title: '数据创建者',
                         align: 'left',
                         valign: 'top',
-                        sortable: true
+                        sortable: true,
+                        width: '10%'
                     }, {
                         field: 'dataUpdater',
                         title: '数据更新者',
                         align: 'left',
                         valign: 'top',
-                        sortable: true
+                        sortable: true,
+                        width: '10%'
                     }, {
                         field: 'dataCreateDatetime',
                         title: '数据创建时间',
                         align: 'left',
                         valign: 'top',
-                        sortable: true
+                        sortable: true,
+                        width: '10%'
                     }, {
                         field: 'dataUpdateDatetime',
                         title: '数据更新时间',
                         align: 'left',
                         valign: 'top',
-                        sortable: true
+                        sortable: true,
+                        width: '10%'
                     },{
                         field: '操作',
                         title: '操作',
                         align: 'center',
                         valign: 'middle',
+                        width: '20%',
                         formatter: flagFormatter
                     }]
                 }
@@ -124,7 +142,7 @@
             return html.join('');
         }
         
-        function rowStyle(row, index) {
+        /*function rowStyle(row, index) {
             var classes = ['active', 'success', 'info', 'warning', 'danger'];
             if (index % 2 === 0 && index / 2 < classes.length) {
                 return {
@@ -132,6 +150,20 @@
                 };
             }
             return {};
+        }*/
+        
+        var $table = $('#table'),
+        	$ok = $('#ok');
+        $(function () {
+            $ok.click(function () {
+                $table.bootstrapTable('refresh');
+            });
+        });
+        function queryParams(params) {
+            $('#form').find('input[name]').each(function () {
+                params[$(this).attr('name')] = $(this).val();
+            });
+            return params;
         }
     }
 })();

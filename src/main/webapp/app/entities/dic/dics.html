@@ -2,15 +2,18 @@
     <h2 translate="istartApp.dic.home.title">Dics</h2>
     <jhi-alert></jhi-alert>
     <div class="container-fluid">
-    	<div class="form-inline" role="form">
+    	<div id="form" class="form-inline" role="form">
+    	<div class="form-group">
+            <span>字典类型编码: </span> <input name="dicTypeCode" class="form-control w70" />
+        </div>
 		<div class="form-group">
-			<span>字典类型: </span> <input name="offset" class="form-control w70" />
+			<span>字典类型名称: </span> <input name="dicTypeName" class="form-control w70" />
 		</div>
 		<div class="form-group">
-			<span>字典编码: </span> <input name="limit" class="form-control w70" />
+			<span>字典编码: </span> <input name="dicCode" class="form-control w70" />
 		</div>
 		<div class="form-group">
-			<span>字典名称: </span> <input name="limit" class="form-control w70" />
+			<span>字典名称: </span> <input name="dicName" class="form-control w70" />
 		</div>
 		<button id="ok" type="submit" class="btn btn-default">OK</button>
 	</div>
@@ -18,11 +21,11 @@
 		<button class="btn btn-primary" ui-sref="dic.new">
 			<span class="glyphicon glyphicon-plus"></span> <span
 				class="hidden-xs" translate="istartApp.dic.home.createLabel">
-				Create new Dic Type </span>
+				Create new Dic </span>
 		</button>
 	</div>
     </div>
     <br/>
     
-    <table bs-table-control="vm.bsTableControl"></table>
+    <table id="table" bs-table-control="vm.bsTableControl"></table>
 </div>
