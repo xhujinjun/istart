@@ -5,7 +5,7 @@
         .module('istartApp')
         .controller('DicController', DicController);
 
-    DicController.$inject = ['$scope', '$state', 'Dic', 'DicSearch', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
+    DicController.$inject = ['$scope'];
 
     function DicController ($scope) {
         var vm = this;
@@ -28,7 +28,6 @@
                     striped: true,//隔行变色效果
                     queryParamsType: 'limit',
                     queryParams: queryParams,
-                    
                     pagination: true,
                     idField: 'id',
                     pageSize: 10,
@@ -39,8 +38,6 @@
                     paginationPreText: 'Previous',
                     paginationNextText: 'Next',
                     paginationLastText: 'Last',
-                    
-                   /* rowStyle: rowStyle,*/
                     columns: [{
                         field: 'state',
                         checkbox: true
@@ -85,14 +82,14 @@
                         align: 'left',
                         valign: 'top',
                         sortable: true,
-                        width: '10%'
+                        width: '5%'
                     }, {
                         field: 'dataUpdater',
                         title: '数据更新者',
                         align: 'left',
                         valign: 'top',
                         sortable: true,
-                        width: '10%'
+                        width: '5%'
                     }, {
                         field: 'dataCreateDatetime',
                         title: '数据创建时间',
@@ -141,16 +138,6 @@
             });
             return html.join('');
         }
-        
-        /*function rowStyle(row, index) {
-            var classes = ['active', 'success', 'info', 'warning', 'danger'];
-            if (index % 2 === 0 && index / 2 < classes.length) {
-                return {
-                    classes: classes[index / 2]
-                };
-            }
-            return {};
-        }*/
         
         var $table = $('#table'),
         	$ok = $('#ok');
