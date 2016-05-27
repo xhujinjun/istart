@@ -5,23 +5,10 @@
         .module('istartApp')
         .controller('DicTypeController', DicTypeController);
 
-    DicTypeController.$inject = ['$scope', '$state', 'DicType', 'DicTypeSearch', 'ParseLinks', 'AlertService', 'pagingParams', 'paginationConstants'];
+    DicTypeController.$inject = ['$scope'];
 
-    function DicTypeController ($scope, $state, DicType, DicTypeSearch, ParseLinks, AlertService, pagingParams, paginationConstants) {
+    function DicTypeController ($scope) {
         var vm = this;
-        
-        window.operateEvents = {
-                'click .like': function (e, value, row, index) {
-                    alert('You click like action, row: ' + JSON.stringify(row));
-                },
-                'click .remove': function (e, value, row, index) {
-                    $table.bootstrapTable('remove', {
-                        field: 'id',
-                        values: [row.id]
-                    });
-                }
-        };
-        
         vm.bsTableControl = {
         		options: {
         			url: '/api/dic-types',
@@ -38,13 +25,17 @@
                     minimumCountColumns: 2,
                     clickToSelect: true,
                     maintainSelected: true,
+                    queryParams: queryParams,
                     pagination: true,
                     idField: 'id',
                     pageSize: 10,
                     pageList: [10, 25, 50, 100, 200],
                     paginationVAlign: 'bottom',
                     sidePagination: 'server',
-                    rowStyle: rowStyle,
+                    paginationFirstText: 'First', 
+                    paginationPreText: 'Previous',
+                    paginationNextText: 'Next',
+                    paginationLastText: 'Last',
                     columns: [{
                         field: 'state',
                         checkbox: true
@@ -89,8 +80,7 @@
                         title: '操作',
                         align: 'center',
                         valign: 'middle',
-                        formatter: flagFormatter,
-                        events: operateEvents
+                        formatter: flagFormatter
                     }]
                 }
             };
@@ -119,14 +109,18 @@
             return html.join('');
         }
         
-        function rowStyle(row, index) {
-            var classes = ['active', 'success', 'info', 'warning', 'danger'];
-            if (index % 2 === 0 && index / 2 < classes.length) {
-                return {
-                    classes: classes[index / 2]
-                };
-            }
-            return {};
+        var $table = $('#table'),
+    	$ok = $('#ok');
+        $(function () {
+        	$ok.click(function () {
+        		$table.bootstrapTable('refresh');
+        	});
+        });
+        function queryParams(params) {
+        	$('#form').find('input[name]').each(function () {
+        		params[$(this).attr('name')] = $(this).val();
+        	});
+        	return params;
         }
     }
 })();

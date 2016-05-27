@@ -7,16 +7,10 @@ import java.util.Optional;
 
 import javax.inject.Inject;
 
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageImpl;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
-import org.springframework.data.domain.Sort.Order;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -36,6 +30,7 @@ import com.istart.framework.web.rest.base.BaseResource;
 import com.istart.framework.web.rest.base.Pager;
 import com.istart.framework.web.rest.dto.TravelAgencyDTO;
 import com.istart.framework.web.rest.mapper.TravelAgencyMapper;
+import com.istart.framework.web.rest.search.SearchTravelAgency;
 import com.istart.framework.web.rest.util.HeaderUtil;
 import com.istart.framework.web.rest.util.PaginationUtil;
 
@@ -107,17 +102,6 @@ public class TravelAgencyResource extends BaseResource{
 
 	/**
 	 * GET /travel-agencies : get all the travelAgencies.
-	 * http://issues.wenzhixin.net.cn/examples/bootstrap_table/data?order=asc&offset=0&limit=10
-	 * {
-  "total": 800,
-  "rows": [
-    {
-      "id": 0,
-      "name": "Item 0",
-      "price": "$0"
-    }
-  ]
-}
 	 * @param pageable
 	 *            the pagination information
 	 * @return the ResponseEntity with status 200 (OK) and the list of
@@ -130,7 +114,6 @@ public class TravelAgencyResource extends BaseResource{
 	@Transactional(readOnly = true)
 	public ResponseEntity<List<TravelAgencyDTO>> getAllTravelAgencies(Pageable pageable) throws URISyntaxException {
 		log.debug("REST request to get a page of TravelAgencies");
-		System.out.println("----------travel-agencies------");
 		Page<TravelAgency> page = travelAgencyService.findAll(pageable);
 		HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/travel-agencies");
 		return new ResponseEntity<>(travelAgencyMapper.travelAgenciesToTravelAgencyDTOs(page.getContent()), headers,
@@ -140,12 +123,10 @@ public class TravelAgencyResource extends BaseResource{
 	@RequestMapping(value = "/travel-agencies", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@Timed
 	@Transactional(readOnly = true)
-	public ResponseEntity<Pager<TravelAgencyDTO>> getAllTravelAgencies(int limit,int offset,String sort,String order) throws URISyntaxException {
-		Pageable pageable = this.toPageable(limit, offset, sort, order);
-		
+	public ResponseEntity<Pager<TravelAgencyDTO>> getAllTravelAgencies(int limit,int offset,String sort,String order,SearchTravelAgency searchTravelAgency) throws URISyntaxException {
 		log.debug("REST request to get a page of TravelAgencies");
-		System.out.println("----------travel-agencies------");
-		Page<TravelAgency> page = travelAgencyService.findAll(pageable);
+		Pageable pageable = this.toPageable(limit, offset, sort, order);
+		Page<TravelAgency> page = travelAgencyService.findByPageSearch(searchTravelAgency, pageable);
 		HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/travel-agencies");
 		
 		Pager<TravelAgencyDTO> pageDto = new Pager<TravelAgencyDTO>(travelAgencyMapper.travelAgenciesToTravelAgencyDTOs(page.getContent()),

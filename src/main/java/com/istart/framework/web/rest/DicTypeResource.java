@@ -30,6 +30,7 @@ import com.istart.framework.web.rest.base.BaseResource;
 import com.istart.framework.web.rest.base.Pager;
 import com.istart.framework.web.rest.dto.DicTypeDTO;
 import com.istart.framework.web.rest.mapper.DicTypeMapper;
+import com.istart.framework.web.rest.search.SearchDicType;
 import com.istart.framework.web.rest.util.HeaderUtil;
 import com.istart.framework.web.rest.util.PaginationUtil;
 
@@ -119,11 +120,11 @@ public class DicTypeResource extends BaseResource{
             produces = MediaType.APPLICATION_JSON_VALUE)
     @Timed
     @Transactional(readOnly = true)
-    public ResponseEntity<Pager<DicTypeDTO>> getAllDicTypes(int limit,int offset,String sort,String order)
+    public ResponseEntity<Pager<DicTypeDTO>> getAllDicTypes(int limit,int offset,String sort,String order,SearchDicType searchDicType)
         throws URISyntaxException {
     	Pageable pageable = this.toPageable(limit, offset, sort, order);
         log.debug("REST request to get a page of DicTypes");
-        Page<DicType> page = dicTypeService.findAll(pageable); 
+        Page<DicType> page = dicTypeService.findByPageSearch(searchDicType, pageable); 
         Pager<DicTypeDTO> pageDto = new Pager<>(dicTypeMapper.dicTypesToDicTypeDTOs(page.getContent()),
 				page.getTotalElements());
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/dic-types");

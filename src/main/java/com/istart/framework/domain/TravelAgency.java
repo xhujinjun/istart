@@ -4,11 +4,13 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.DynamicInsert;
 import org.hibernate.annotations.DynamicUpdate;
+import org.hibernate.annotations.Generated;
 import org.springframework.data.elasticsearch.annotations.Document;
 
 import javax.persistence.*;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.Objects;
 
 /**
@@ -46,6 +48,22 @@ public class TravelAgency implements Serializable {
     @Column(name = "contact_phone")
     private String contactPhone;
 
+    @Column(name = "data_creator")
+    private String dataCreator;
+
+    @Column(name = "data_updater")
+    private String dataUpdater;
+
+    @Column(name = "data_create_datetime",insertable=false,updatable=false)
+    private ZonedDateTime dataCreateDatetime;
+
+    @Column(name = "data_update_datetime")
+    @Generated(org.hibernate.annotations.GenerationTime.ALWAYS)
+    private ZonedDateTime dataUpdateDatetime;
+
+    @Column(name = "data_status")
+    private Integer dataStatus;
+    
     public Long getId() {
         return id;
     }
@@ -102,7 +120,47 @@ public class TravelAgency implements Serializable {
         this.contactPhone = contactPhone;
     }
 
-    @Override
+    public String getDataCreator() {
+		return dataCreator;
+	}
+
+	public void setDataCreator(String dataCreator) {
+		this.dataCreator = dataCreator;
+	}
+
+	public String getDataUpdater() {
+		return dataUpdater;
+	}
+
+	public void setDataUpdater(String dataUpdater) {
+		this.dataUpdater = dataUpdater;
+	}
+
+	public ZonedDateTime getDataCreateDatetime() {
+		return dataCreateDatetime;
+	}
+
+	public void setDataCreateDatetime(ZonedDateTime dataCreateDatetime) {
+		this.dataCreateDatetime = dataCreateDatetime;
+	}
+
+	public ZonedDateTime getDataUpdateDatetime() {
+		return dataUpdateDatetime;
+	}
+
+	public void setDataUpdateDatetime(ZonedDateTime dataUpdateDatetime) {
+		this.dataUpdateDatetime = dataUpdateDatetime;
+	}
+
+	public Integer getDataStatus() {
+		return dataStatus;
+	}
+
+	public void setDataStatus(Integer dataStatus) {
+		this.dataStatus = dataStatus;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

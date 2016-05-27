@@ -1,12 +1,11 @@
 package com.istart.framework.service;
 
-import com.istart.framework.domain.TravelAgency;
-import com.istart.framework.web.rest.dto.TravelAgencyDTO;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
-import java.util.LinkedList;
-import java.util.List;
+import com.istart.framework.domain.TravelAgency;
+import com.istart.framework.web.rest.dto.TravelAgencyDTO;
+import com.istart.framework.web.rest.search.SearchTravelAgency;
 
 /**
  * Service Interface for managing TravelAgency.
@@ -29,6 +28,7 @@ public interface TravelAgencyService {
      */
     Page<TravelAgency> findAll(Pageable pageable);
 
+    Page<TravelAgency> findByPageSearch(SearchTravelAgency searchTravelAgency,Pageable pageable);
     /**
      *  Get the "id" travelAgency.
      *  

@@ -1,7 +1,11 @@
 package com.istart.framework.service;
 
+import com.istart.framework.domain.Dic;
 import com.istart.framework.domain.DicType;
 import com.istart.framework.web.rest.dto.DicTypeDTO;
+import com.istart.framework.web.rest.search.SearchDic;
+import com.istart.framework.web.rest.search.SearchDicType;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
@@ -28,7 +32,13 @@ public interface DicTypeService {
      *  @return the list of entities
      */
     Page<DicType> findAll(Pageable pageable);
-
+    /**
+     * 分页动态查询字典类型
+     * @param searchDic
+     * @param pageable
+     * @return
+     */
+    Page<DicType> findByPageSearch(final SearchDicType searchDicType,Pageable pageable);
     /**
      *  Get the "id" dicType.
      *  

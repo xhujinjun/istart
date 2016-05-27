@@ -109,7 +109,7 @@ public class DicResource extends BaseResource{
     public ResponseEntity<List<DicDTO>> getAllDics(SearchDic searchDic,Pageable pageable)
         throws URISyntaxException {
         log.debug("REST request to get a page of Dics");
-        Page<Dic> page = dicService.findByPageSearcg(searchDic,null); 
+        Page<Dic> page = dicService.findByPageSearch(searchDic,null); 
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/dics");
         return new ResponseEntity<>(dicMapper.dicsToDicDTOs(page.getContent()), headers, HttpStatus.OK);
     }
@@ -121,9 +121,10 @@ public class DicResource extends BaseResource{
     @Transactional(readOnly = true)
     public ResponseEntity<Pager<DicDTO>> getAllDics(int limit,int offset,String sort,String order,SearchDic searchDic)
         throws URISyntaxException {
+    	log.debug("REST request to get a page of Dics");
     	Pageable pageable = this.toPageable(limit, offset, sort, order);
         log.debug("REST request to get a page of Dics");
-        Page<Dic> page = dicService.findByPageSearcg(searchDic,pageable); 
+        Page<Dic> page = dicService.findByPageSearch(searchDic,pageable); 
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/dics");
         
         Pager<DicDTO> pagerDto = new Pager<>(dicMapper.dicsToDicDTOs(page.getContent()),page.getTotalElements());

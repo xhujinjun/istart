@@ -80,7 +80,7 @@ public class DicServiceImpl implements DicService{
 
     @Override
     @Transactional(readOnly = true) 
-    public Page<Dic> findByPageSearcg(final SearchDic searchDic,Pageable pageable) {
+    public Page<Dic> findByPageSearch(final SearchDic searchDic,Pageable pageable) {
         log.debug("Request to get all Dics");
         Page<Dic> result = dicRepository.findAll(this.getSpecification(searchDic), pageable);
         return result;
@@ -147,23 +147,23 @@ public class DicServiceImpl implements DicService{
 				String dicTypeCode = searchDic.getDicTypeCode();
 				if(StringUtils.isNoneBlank(dicTypeCode)){
 					Path<String> expDicTypeCode = join.get("dicTypeCode");
-					list.add(cb.equal(expDicTypeCode, dicTypeCode));
+					list.add(cb.like(expDicTypeCode, dicTypeCode + "%"));
 				}
 				String dicTypeName = searchDic.getDicTypeName();
 				if(StringUtils.isNoneBlank(dicTypeName)){
 					Path<String> expDicTypeName = join.get("dicTypeName");
-					list.add(cb.equal(expDicTypeName, dicTypeName));
+					list.add(cb.like(expDicTypeName, dicTypeName+ "%"));
 				}
 				
 				String dicCode = searchDic.getDicCode();
 				if (StringUtils.isNoneBlank(dicCode)) {
 					Path<String> expDicCode = root.get("dicCode");
-					list.add(cb.equal(expDicCode, dicCode));
+					list.add(cb.like(expDicCode, dicCode+ "%"));
 				}
 				String dicName = searchDic.getDicName();
 				if (StringUtils.isNoneBlank(dicName)) {
 					Path<String> expDicName = root.get("dicName");
-					list.add(cb.equal(expDicName, dicName));
+					list.add(cb.like(expDicName, dicName+ "%"));
 				}
 				
 				list.add(cb.equal(root.get("dataStatus"), "1"));

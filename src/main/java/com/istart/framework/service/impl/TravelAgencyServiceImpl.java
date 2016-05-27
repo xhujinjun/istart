@@ -1,25 +1,33 @@
 package com.istart.framework.service.impl;
 
-import com.istart.framework.service.TravelAgencyService;
-import com.istart.framework.domain.TravelAgency;
-import com.istart.framework.repository.TravelAgencyRepository;
-import com.istart.framework.repository.search.TravelAgencySearchRepository;
-import com.istart.framework.web.rest.dto.TravelAgencyDTO;
-import com.istart.framework.web.rest.mapper.TravelAgencyMapper;
+import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Path;
+import javax.persistence.criteria.Predicate;
+import javax.persistence.criteria.Root;
+
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.transaction.annotation.Transactional;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
-import javax.inject.Inject;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
-
-import static org.elasticsearch.index.query.QueryBuilders.*;
+import com.istart.framework.domain.TravelAgency;
+import com.istart.framework.repository.TravelAgencyRepository;
+import com.istart.framework.repository.search.TravelAgencySearchRepository;
+import com.istart.framework.service.TravelAgencyService;
+import com.istart.framework.web.rest.dto.TravelAgencyDTO;
+import com.istart.framework.web.rest.mapper.TravelAgencyMapper;
+import com.istart.framework.web.rest.search.SearchTravelAgency;
 
 /**
  * Service Implementation for managing TravelAgency.
@@ -66,7 +74,13 @@ public class TravelAgencyServiceImpl implements TravelAgencyService{
         Page<TravelAgency> result = travelAgencyRepository.findAll(pageable); 
         return result;
     }
-
+    
+    @Override
+	public Page<TravelAgency> findByPageSearch(SearchTravelAgency searchTravelAgency, Pageable pageable) {
+    	log.debug("Request to get all TravelAgencies");
+    	 Page<TravelAgency> result = travelAgencyRepository.findAll(this.getSpecification(searchTravelAgency), pageable);
+         return result;
+	}
     /**
      *  Get one travelAgency by id.
      *
@@ -103,4 +117,27 @@ public class TravelAgencyServiceImpl implements TravelAgencyService{
         log.debug("Request to search for a page of TravelAgencies for query {}", query);
         return travelAgencySearchRepository.search(queryStringQuery(query), pageable);
     }
+    private Specification<TravelAgency> getSpecification(final SearchTravelAgency searchTravelAgency){
+    	return new Specification<TravelAgency>() {
+			@Override
+			public Predicate toPredicate(Root<TravelAgency> root, CriteriaQuery<?> query, CriteriaBuilder cb) {
+				List<Predicate> list = new ArrayList<Predicate>();
+				
+				String agencyCode = searchTravelAgency.getAgencyCode();
+				if(StringUtils.isNoneBlank(agencyCode)){
+					Path<String> expAgencyCode = root.get("agencyCode");
+					list.add(cb.like(expAgencyCode, agencyCode + "%"));
+				}
+				String agencyName = searchTravelAgency.getAgencyName();
+				if(StringUtils.isNoneBlank(agencyName)){
+					Path<String> expAgencyName = root.get("agencyName");
+					list.add(cb.like(expAgencyName, agencyName+ "%"));
+				}
+				list.add(cb.equal(root.get("dataStatus"), "1"));
+				Predicate[] p = new Predicate[list.size()];
+				return cb.and(list.toArray(p));
+			}
+		};
+    }
+
 }

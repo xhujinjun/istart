@@ -13,9 +13,9 @@
         		options: {
         			url: '/api/dics',
                     cache: false,
-                    striped: true,
+                    striped: true,//隔行变色效果
                     toolbar: '#toolbar',
-                    search: false,
+                    search: true,
                     showRefresh: true,
                     showToggle: true,
                     showColumns: true,
@@ -25,13 +25,11 @@
                     minimumCountColumns: 2,
                     clickToSelect: true,
                     maintainSelected: true,
-                    striped: true,//隔行变色效果
-                    queryParamsType: 'limit',
                     queryParams: queryParams,
                     pagination: true,
                     idField: 'id',
                     pageSize: 10,
-                    pageList: [10, 25, 50, 100, 200],
+                    pageList: [10, 25, 50, 100],
                     paginationVAlign: 'bottom',
                     sidePagination: 'server',
                     paginationFirstText: 'First', 

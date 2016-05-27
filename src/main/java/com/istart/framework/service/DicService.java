@@ -31,8 +31,13 @@ public interface DicService {
      *  @return the list of entities
      */
     Page<Dic> findAll(Pageable pageable);
-
-    Page<Dic> findByPageSearcg(final SearchDic searchDic,Pageable pageable);
+    /**
+     * 分页动态查询字典
+     * @param searchDic
+     * @param pageable
+     * @return
+     */
+    Page<Dic> findByPageSearch(final SearchDic searchDic,Pageable pageable);
     /**
      *  Get the "id" dic.
      *  
