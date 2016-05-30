@@ -122,8 +122,8 @@ public class DicTypeResource extends BaseResource{
     @Transactional(readOnly = true)
     public ResponseEntity<Pager<DicTypeDTO>> getAllDicTypes(int limit,int offset,String sort,String order,SearchDicType searchDicType)
         throws URISyntaxException {
-    	Pageable pageable = this.toPageable(limit, offset, sort, order);
         log.debug("REST request to get a page of DicTypes");
+        Pageable pageable = this.toPageable(limit, offset, sort, order);
         Page<DicType> page = dicTypeService.findByPageSearch(searchDicType, pageable); 
         Pager<DicTypeDTO> pageDto = new Pager<>(dicTypeMapper.dicTypesToDicTypeDTOs(page.getContent()),
 				page.getTotalElements());

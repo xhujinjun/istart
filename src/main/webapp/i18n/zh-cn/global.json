@@ -78,6 +78,8 @@
                 "dic": "字典管理",
                 "product": "自驾游管理",
                  "hotel": "酒店管理",
+                "scenicArea": "景区管理",
+                "scenicSpot": "景点管理",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

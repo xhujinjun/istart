@@ -75,6 +75,8 @@
                 "hotel": "Hotel",
                 "dic": "Dic",
                 "product": "Product",
+                "scenicArea": "Scenic Area",
+                "scenicSpot": "Scenic Spot",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

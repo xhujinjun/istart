@@ -1,0 +1,43 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myScenicSpotLabel" translate="istartApp.scenicSpot.home.createOrEditLabel">Create or edit a Scenic Spot</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.scenicSpot.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.scenicSpot.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicSpot.scenicAreasId" for="field_scenicAreasId">Scenic Areas Id</label>
+            <input type="number" class="form-control" name="scenicAreasId" id="field_scenicAreasId"
+                    ng-model="vm.scenicSpot.scenicAreasId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicSpot.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.scenicSpot.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicSpot.introduce" for="field_introduce">Introduce</label>
+                <textarea class="form-control" name="introduce" id="field_introduce"
+                    ng-model="vm.scenicSpot.introduce"  />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

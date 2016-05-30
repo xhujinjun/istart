@@ -1,0 +1,94 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "scenicSpot",
+            "otherEntityName": "scenicSpot",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "scenicArea"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "scenicStar",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "score",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "interestNum",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ticket",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "ticketDesc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "openStartTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "openEndTime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "openDesc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "playTimeNum",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "contact",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "website",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "overview",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        },
+        {
+            "fieldName": "imagePath",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataCreator",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataUpdater",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataCreateDatetime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataUpdateDatetime",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "dataStatus",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160530160304",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "scenic_area",
+    "pagination": "pagination"
+}
