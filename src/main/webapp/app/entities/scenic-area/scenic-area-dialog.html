@@ -1,0 +1,155 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myScenicAreaLabel" translate="istartApp.scenicArea.home.createOrEditLabel">Create or edit a Scenic Area</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.scenicArea.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.scenicArea.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                    ng-model="vm.scenicArea.name"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.scenicStar" for="field_scenicStar">Scenic Star</label>
+            <input type="text" class="form-control" name="scenicStar" id="field_scenicStar"
+                    ng-model="vm.scenicArea.scenicStar"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.score" for="field_score">Score</label>
+            <input type="number" class="form-control" name="score" id="field_score"
+                    ng-model="vm.scenicArea.score"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.interestNum" for="field_interestNum">Interest Num</label>
+            <input type="number" class="form-control" name="interestNum" id="field_interestNum"
+                    ng-model="vm.scenicArea.interestNum"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.ticket" for="field_ticket">Ticket</label>
+            <input type="number" class="form-control" name="ticket" id="field_ticket"
+                    ng-model="vm.scenicArea.ticket"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.ticketDesc" for="field_ticketDesc">Ticket Desc</label>
+            <input type="text" class="form-control" name="ticketDesc" id="field_ticketDesc"
+                    ng-model="vm.scenicArea.ticketDesc"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.openStartTime" for="field_openStartTime">Open Start Time</label>
+                <div class="input-group">
+                    <input id="field_openStartTime" type="text" class="form-control" name="openStartTime" datetime-picker="{{dateformat}}" ng-model="vm.scenicArea.openStartTime" is-open="vm.datePickerOpenStatus.openStartTime"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('openStartTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.openEndTime" for="field_openEndTime">Open End Time</label>
+                <div class="input-group">
+                    <input id="field_openEndTime" type="text" class="form-control" name="openEndTime" datetime-picker="{{dateformat}}" ng-model="vm.scenicArea.openEndTime" is-open="vm.datePickerOpenStatus.openEndTime"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('openEndTime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.openDesc" for="field_openDesc">Open Desc</label>
+            <input type="text" class="form-control" name="openDesc" id="field_openDesc"
+                    ng-model="vm.scenicArea.openDesc"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.playTimeNum" for="field_playTimeNum">Play Time Num</label>
+            <input type="number" class="form-control" name="playTimeNum" id="field_playTimeNum"
+                    ng-model="vm.scenicArea.playTimeNum"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.contact" for="field_contact">Contact</label>
+            <input type="text" class="form-control" name="contact" id="field_contact"
+                    ng-model="vm.scenicArea.contact"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.website" for="field_website">Website</label>
+            <input type="text" class="form-control" name="website" id="field_website"
+                    ng-model="vm.scenicArea.website"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.overview" for="field_overview">Overview</label>
+                <textarea class="form-control" name="overview" id="field_overview"
+                    ng-model="vm.scenicArea.overview"  />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.imagePath" for="field_imagePath">Image Path</label>
+            <input type="text" class="form-control" name="imagePath" id="field_imagePath"
+                    ng-model="vm.scenicArea.imagePath"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.dataCreator" for="field_dataCreator">Data Creator</label>
+            <input type="text" class="form-control" name="dataCreator" id="field_dataCreator"
+                    ng-model="vm.scenicArea.dataCreator"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.dataUpdater" for="field_dataUpdater">Data Updater</label>
+            <input type="text" class="form-control" name="dataUpdater" id="field_dataUpdater"
+                    ng-model="vm.scenicArea.dataUpdater"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.dataCreateDatetime" for="field_dataCreateDatetime">Data Create Datetime</label>
+                <div class="input-group">
+                    <input id="field_dataCreateDatetime" type="text" class="form-control" name="dataCreateDatetime" datetime-picker="{{dateformat}}" ng-model="vm.scenicArea.dataCreateDatetime" is-open="vm.datePickerOpenStatus.dataCreateDatetime"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataCreateDatetime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.dataUpdateDatetime" for="field_dataUpdateDatetime">Data Update Datetime</label>
+                <div class="input-group">
+                    <input id="field_dataUpdateDatetime" type="text" class="form-control" name="dataUpdateDatetime" datetime-picker="{{dateformat}}" ng-model="vm.scenicArea.dataUpdateDatetime" is-open="vm.datePickerOpenStatus.dataUpdateDatetime"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dataUpdateDatetime')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="istartApp.scenicArea.dataStatus" for="field_dataStatus">Data Status</label>
+            <input type="number" class="form-control" name="dataStatus" id="field_dataStatus"
+                    ng-model="vm.scenicArea.dataStatus"
+                     />
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

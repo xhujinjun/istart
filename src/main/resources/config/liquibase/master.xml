@@ -16,8 +16,13 @@
     <include file="classpath:config/liquibase/changelog/20160521064540_added_entity_DicType.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160521065001_added_entity_Dic.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160522121220_added_entity_Product.xml" relativeToChangelogFile="false"/>
+<<<<<<< HEAD
     <include file="classpath:config/liquibase/changelog/20160531152210_added_entity_Pictrues.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160531152746_added_entity_Trip.xml" relativeToChangelogFile="false"/>
     <include file="classpath:config/liquibase/changelog/20160531155452_added_entity_Products.xml" relativeToChangelogFile="false"/>
+=======
+    <include file="classpath:config/liquibase/changelog/20160530160304_added_entity_ScenicArea.xml" relativeToChangelogFile="false"/>
+    <include file="classpath:config/liquibase/changelog/20160530161226_added_entity_ScenicSpot.xml" relativeToChangelogFile="false"/>
+>>>>>>> 3e5e932e9ede3b2442b59f403e164f35adc64eeb
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
 </databaseChangeLog>

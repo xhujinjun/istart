@@ -78,9 +78,14 @@
                 "dic": "字典管理",
                 "product": "自驾游管理",
                  "hotel": "酒店管理",
+<<<<<<< HEAD
                 "pictrues": "Pictrues",
                 "trip": "Trip",
                 "products": "Products",
+=======
+                "scenicArea": "景区管理",
+                "scenicSpot": "景点管理",
+>>>>>>> 3e5e932e9ede3b2442b59f403e164f35adc64eeb
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

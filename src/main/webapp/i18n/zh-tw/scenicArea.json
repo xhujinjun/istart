@@ -1,0 +1,41 @@
+{
+    "istartApp": {
+        "scenicArea" : {
+            "home": {
+                "title": "Scenic Areas",
+                "createLabel": "Create a new Scenic Area",
+                "createOrEditLabel": "Create or edit a Scenic Area",
+                "search": "Search for Scenic Area"
+            },
+            "created": "A new Scenic Area is created with identifier {{ param }}",
+            "updated": "A Scenic Area is updated with identifier {{ param }}",
+            "deleted": "A Scenic Area is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Scenic Area {{ id }}?"
+            },
+            "detail": {
+                "title": "Scenic Area"
+            },
+            "name": "Name",
+            "scenicStar": "Scenic Star",
+            "score": "Score",
+            "interestNum": "Interest Num",
+            "ticket": "Ticket",
+            "ticketDesc": "Ticket Desc",
+            "openStartTime": "Open Start Time",
+            "openEndTime": "Open End Time",
+            "openDesc": "Open Desc",
+            "playTimeNum": "Play Time Num",
+            "contact": "Contact",
+            "website": "Website",
+            "overview": "Overview",
+            "imagePath": "Image Path",
+            "dataCreator": "Data Creator",
+            "dataUpdater": "Data Updater",
+            "dataCreateDatetime": "Data Create Datetime",
+            "dataUpdateDatetime": "Data Update Datetime",
+            "dataStatus": "Data Status",
+            "scenicSpot": "Scenic Spot"
+        }
+    }
+}

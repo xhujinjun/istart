@@ -77,9 +77,14 @@
 =======
                 "hotel": "酒店管理",
 >>>>>>> e464f1f20d43edf1763f229b06b5b485e13cde16
+<<<<<<< HEAD
                 "pictrues": "Pictrues",
                 "trip": "Trip",
                 "products": "Products",
+=======
+                "scenicArea": "Scenic Area",
+                "scenicSpot": "Scenic Spot",
+>>>>>>> 3e5e932e9ede3b2442b59f403e164f35adc64eeb
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

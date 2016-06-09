@@ -1,0 +1,23 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "scenicAreasId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "introduce",
+            "fieldType": "byte[]",
+            "fieldTypeBlobContent": "text"
+        }
+    ],
+    "changelogDate": "20160530161226",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "scenic_spot",
+    "pagination": "pagination"
+}

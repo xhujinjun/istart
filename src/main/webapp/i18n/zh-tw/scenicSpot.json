@@ -1,0 +1,24 @@
+{
+    "istartApp": {
+        "scenicSpot" : {
+            "home": {
+                "title": "Scenic Spots",
+                "createLabel": "Create a new Scenic Spot",
+                "createOrEditLabel": "Create or edit a Scenic Spot",
+                "search": "Search for Scenic Spot"
+            },
+            "created": "A new Scenic Spot is created with identifier {{ param }}",
+            "updated": "A Scenic Spot is updated with identifier {{ param }}",
+            "deleted": "A Scenic Spot is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Scenic Spot {{ id }}?"
+            },
+            "detail": {
+                "title": "Scenic Spot"
+            },
+            "scenicAreasId": "Scenic Areas Id",
+            "name": "Name",
+            "introduce": "Introduce"
+        }
+    }
+}

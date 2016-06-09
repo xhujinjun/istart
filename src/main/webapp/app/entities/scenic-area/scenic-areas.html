@@ -1,0 +1,21 @@
+<div>
+    <h2 translate="istartApp.scenicArea.home.title">Scenic Areas</h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+	<div id="form" class="form-inline" role="form">
+		<div class="form-group">
+			<span>景区名称: </span> <input name="name" class="form-control w70">
+		</div>
+		<button id="ok" type="submit" class="btn btn-default">OK</button>
+	</div>
+    <br/>
+    <div id="toolbar">
+		<button class="btn btn-primary" ui-sref="scenic-area.new" >
+            <span class="glyphicon glyphicon-plus"></span>
+            <span class="hidden-xs"  translate="istartApp.scenicArea.home.createLabel">
+                 Create new Scenic Area
+            </span>
+        </button>
+	</div>
+	<table id="table" bs-table-control="vm.bsTableControl"></table>
+</div>

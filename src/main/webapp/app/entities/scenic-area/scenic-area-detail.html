@@ -1,0 +1,108 @@
+
+<div>
+    <h2><span translate="istartApp.scenicArea.detail.title">Scenic Area</span> {{vm.scenicArea.id}}</h2>
+    <hr>
+    <dl class="dl-horizontal">
+        <dt><span translate="istartApp.scenicArea.name">Name</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.name}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.scenicStar">Scenic Star</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.scenicStar}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.score">Score</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.score}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.interestNum">Interest Num</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.interestNum}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.ticket">Ticket</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.ticket}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.ticketDesc">Ticket Desc</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.ticketDesc}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.openStartTime">Open Start Time</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.openStartTime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.openEndTime">Open End Time</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.openEndTime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.openDesc">Open Desc</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.openDesc}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.playTimeNum">Play Time Num</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.playTimeNum}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.contact">Contact</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.contact}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.website">Website</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.website}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.overview">Overview</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.overview}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.imagePath">Image Path</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.imagePath}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.dataCreator">Data Creator</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.dataCreator}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.dataUpdater">Data Updater</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.dataUpdater}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.dataCreateDatetime">Data Create Datetime</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.dataCreateDatetime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.dataUpdateDatetime">Data Update Datetime</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.dataUpdateDatetime | date:'medium'}}</span>
+        </dd>
+        <hr>
+        <dt><span translate="istartApp.scenicArea.dataStatus">Data Status</span></dt>
+        <dd>
+            <span>{{vm.scenicArea.dataStatus}}</span>
+        </dd>
+        <hr>
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>
