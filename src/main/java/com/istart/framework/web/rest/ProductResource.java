@@ -62,7 +62,7 @@ public class ProductResource {
 	 * @throws URISyntaxException
 	 *             if the Location URI syntax is incorrect
 	 */
-	@RequestMapping(value = "/products", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/productss", method = RequestMethod.POST, produces = MediaType.APPLICATION_JSON_VALUE)
 	@Timed
 	public ResponseEntity<ProductDTO> createProduct(@RequestBody ProductDTO productDTO) throws URISyntaxException {
 		log.debug("REST request to save Product : {}", productDTO);
@@ -88,7 +88,7 @@ public class ProductResource {
 	 * @throws URISyntaxException
 	 *             if the Location URI syntax is incorrect
 	 */
-	@RequestMapping(value = "/products", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/productss", method = RequestMethod.PUT, produces = MediaType.APPLICATION_JSON_VALUE)
 	@Timed
 	public ResponseEntity<ProductDTO> updateProduct(@RequestBody ProductDTO productDTO) throws URISyntaxException {
 		log.debug("REST request to update Product : {}", productDTO);
@@ -110,7 +110,7 @@ public class ProductResource {
 	 * @throws URISyntaxException
 	 *             if there is an error to generate the pagination HTTP headers
 	 */
-	@RequestMapping(value = "/products", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/productss", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@Timed
 	@Transactional(readOnly = true)
 	public ResponseEntity<List<ProductDTO>> getAllProducts(Pageable pageable) throws URISyntaxException {
@@ -148,7 +148,7 @@ public class ProductResource {
 	 * @return the ResponseEntity with status 200 (OK) and with body the
 	 *         productDTO, or with status 404 (Not Found)
 	 */
-	@RequestMapping(value = "/products/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/productss/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@Timed
 	public ResponseEntity<ProductDTO> getProduct(@PathVariable Long id) {
 		log.debug("REST request to get Product : {}", id);
@@ -164,7 +164,7 @@ public class ProductResource {
 	 *            the id of the productDTO to delete
 	 * @return the ResponseEntity with status 200 (OK)
 	 */
-	@RequestMapping(value = "/products/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/productss/{id}", method = RequestMethod.DELETE, produces = MediaType.APPLICATION_JSON_VALUE)
 	@Timed
 	public ResponseEntity<Void> deleteProduct(@PathVariable Long id) {
 		log.debug("REST request to delete Product : {}", id);
@@ -180,7 +180,7 @@ public class ProductResource {
 	 *            the query of the product search
 	 * @return the result of the search
 	 */
-	@RequestMapping(value = "/_search/products", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	@RequestMapping(value = "/_search/productss", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@Timed
 	@Transactional(readOnly = true)
 	public ResponseEntity<List<ProductDTO>> searchProducts(@RequestParam String query, @RequestParam String name,
