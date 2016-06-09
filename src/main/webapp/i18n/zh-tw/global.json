@@ -77,6 +77,9 @@
 =======
                 "hotel": "酒店管理",
 >>>>>>> e464f1f20d43edf1763f229b06b5b485e13cde16
+                "pictrues": "Pictrues",
+                "trip": "Trip",
+                "products": "Products",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

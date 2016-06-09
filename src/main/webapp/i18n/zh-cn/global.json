@@ -78,6 +78,9 @@
                 "dic": "字典管理",
                 "product": "自驾游管理",
                  "hotel": "酒店管理",
+                "pictrues": "Pictrues",
+                "trip": "Trip",
+                "products": "Products",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

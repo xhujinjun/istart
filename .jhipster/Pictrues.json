@@ -1,0 +1,18 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "pno",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "picPath",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160531152210",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "pictrues",
+    "pagination": "infinite-scroll"
+}

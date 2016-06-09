@@ -1,0 +1,22 @@
+{
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "pno",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "day",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "discripe",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20160531152746",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "trip",
+    "pagination": "infinite-scroll"
+}

@@ -1,0 +1,23 @@
+{
+    "istartApp": {
+        "pictrues" : {
+            "home": {
+                "title": "Pictrues",
+                "createLabel": "Create a new Pictrues",
+                "createOrEditLabel": "Create or edit a Pictrues",
+                "search": "Search for Pictrues"
+            },
+            "created": "A new Pictrues is created with identifier {{ param }}",
+            "updated": "A Pictrues is updated with identifier {{ param }}",
+            "deleted": "A Pictrues is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Pictrues {{ id }}?"
+            },
+            "detail": {
+                "title": "Pictrues"
+            },
+            "pno": "Pno",
+            "picPath": "Pic Path"
+        }
+    }
+}

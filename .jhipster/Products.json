@@ -1,0 +1,115 @@
+{
+    "relationships": [
+        {
+            "relationshipName": "trips",
+            "otherEntityName": "trip",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "prod"
+        },
+        {
+            "relationshipName": "pictrues",
+            "otherEntityName": "pictrues",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "prod"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "pno",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "travelAgentId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "phone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "pricedesc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "preferential",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "startdate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "startadderss",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "endadderss",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "days",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "costdesc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "route",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "detaildesc",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "bookNotice",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "rate",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tourismTypesId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "detailTypeId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "dataCreator",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataUpdater",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "dataCreateDatetime",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dataUpdateDatetime",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dataStatus",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20160531155452",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "products",
+    "pagination": "infinite-scroll"
+}

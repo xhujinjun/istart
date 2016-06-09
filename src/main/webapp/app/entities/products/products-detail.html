@@ -1,0 +1,86 @@
+
+<div>
+    <h2><span translate="istartApp.products.detail.title">Products</span> {{vm.products.title}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="istartApp.products.pno">Pno</span></dt>
+        <dd>
+            <span>{{vm.products.pno}}</span>
+        </dd>
+        <dt><span translate="istartApp.products.travelAgentId">Travel Agent Id</span></dt>
+        <dd>
+            <span>{{vm.products.travelAgency.agencyName}}</span>
+        </dd>
+        <dt><span translate="istartApp.products.phone">Phone</span></dt>
+        <dd>
+            <span>{{vm.products.phone}}</span>
+        </dd>
+        <dt><span translate="istartApp.products.title">Title</span></dt>
+        <dd>
+            <span>{{vm.products.title}}</span>
+        </dd>
+        <dt><span translate="istartApp.products.price">Price</span></dt>
+        <dd>
+            <span>{{vm.products.price}}</span>
+        </dd>
+        <dt><span translate="istartApp.products.pricedesc">Pricedesc</span></dt>
+        <dd>
+            <span>{{vm.products.pricedesc}}</span>
+        </dd>
+        <dt><span translate="istartApp.products.preferential">Preferential</span></dt>
+        <dd>
+            <span>{{vm.products.preferential}}</span>
+        </dd>
+        <dt><span translate="istartApp.products.startdate">Startdate</span></dt>
+        <dd>
+            <span>{{vm.products.startdate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span translate="istartApp.products.startadderss">Startadderss</span></dt>
+        <dd>
+            <span>{{vm.products.startadderss}}</span>
+        </dd>
+        <dt><span translate="istartApp.products.endadderss">Endadderss</span></dt>
+        <dd>
+            <span>{{vm.products.endadderss}}</span>
+        </dd>
+        <dt><span translate="istartApp.products.days">Days</span></dt>
+        <dd>
+            <span>{{vm.products.days}}</span>
+        </dd>
+        <dt><span translate="istartApp.products.costdesc">Costdesc</span></dt>
+        <dd>
+            <span>{{vm.products.costdesc}}</span>
+        </dd>
+        <dt><span translate="istartApp.products.route">Route</span></dt>
+        <dd>
+            <span>{{vm.products.route}}</span>
+        </dd>
+        <dt><span translate="istartApp.products.detaildesc">Detaildesc</span></dt>
+        <dd>
+            <span>{{vm.products.detaildesc}}</span>
+        </dd>
+        <dt><span translate="istartApp.products.bookNotice">Book Notice</span></dt>
+        <dd>
+            <span>{{vm.products.bookNotice}}</span>
+        </dd>
+        <dt><span translate="istartApp.products.tourismTypesId">Tourism Types Id</span></dt>
+        <dd>
+            <span>{{vm.products.tourismType.dicName}}</span>
+        </dd>
+        <dt><span translate="istartApp.products.detailTypeId">Detail Type Id</span></dt>
+        <dd>
+            <span>{{vm.products.detailType.dicName}}</span>
+        </dd>
+       <!--  <dt><span translate="istartApp.products.dataStatus">Data Status</span></dt>
+        <dd>
+            <span>{{vm.products.dataStatus}}</span>
+        </dd> -->
+    </dl>
+
+    <button type="submit"
+            onclick="window.history.back()"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+</div>

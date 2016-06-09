@@ -1,0 +1,39 @@
+<div>
+    <h2 translate="istartApp.products.home.title">Products</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="products.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span class="hidden-xs"  translate="istartApp.products.home.createLabel">
+                        Create new Products
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+     <div id="toolbar" style="display:inline">
+            <div class="form-inline" id="form" role="form" style="white-spacing:nowrap;">
+                <div class="form-group">
+                    <span translate="istartApp.products.start">startadderss: </span>
+                    <input id="start"  name="startadderss" class="form-control w70" type="text">
+                </div>
+                <div class="form-group">
+                    <span translate="istartApp.products.price">price: </span>
+                    <input name="price"  id="price" class="form-control w70" type="number" >
+                </div>
+                <div class="form-group" >
+                 <span translate="istartApp.products.startdate">startdate: </span>
+                    <input type="text"  id="startdate"  class="form-control" name="startdate" uib-datepicker-popup="{{dateformat}}" ng-model="vm.product.startdate" is-open="vm.datePickerOpenStatus.startdate"
+                    />
+                 </div>
+                 <div class="form-group" >
+                  <button type="button" class="btn btn-default" ng-click="vm.openCalendar('startdate')"><i class="glyphicon glyphicon-calendar"></i></button>
+                 </div>
+                   <button id="ok" translate="istartApp.products.home.search"  class="btn btn-default">Search</button>
+            </div>
+    </div>
+    <table id="table" bs-table-control="vm.ProductsController"></table>
+</div>

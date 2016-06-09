@@ -1,0 +1,50 @@
+{
+    "istartApp": {
+        "products" : {
+            "home": {
+                "title": "旅游产品",
+                "createLabel": "发布产品",
+                "createOrEditLabel": "产品编辑",
+                "search": "查询"
+            },
+            "created": "A new Products is created with identifier {{ param }}",
+            "updated": "A Products is updated with identifier {{ param }}",
+            "deleted": "A Products is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Products {{ id }}?"
+            },
+            "start":"出发地",
+            "detail": {
+                "title": "产品"
+            },
+            "pno": "产品编号",
+            "travelAgentId": "旅行社",
+            "phone": "客服电话",
+            "title": "标题",
+            "price": "价格",
+            "pricedesc": "起价说明",
+            "preferential": "优惠信息",
+            "startdate": "出发日期",
+            "startadderss": "出发地",
+            "endadderss": "目的地",
+            "days": "天数",
+            "costdesc": "费用说明",
+            "route": "路线",
+            "detaildesc": "产品描述",
+            "bookNotice": "预定须知",
+            "rate": "好评率",
+            "tourismTypesId": "类型1",
+            "detailTypeId": "类型2",
+            "dataCreator": "创建人",
+            "dataUpdater": "更新人",
+            "dataCreateDatetime": "创建时间",
+            "dataUpdateDatetime": "更新时间",
+            "dataStatus": "状态",
+            "trips": "路线",
+            "pictrues": "图片",
+            "select":"----请选择----",
+            "upload":"选择图片",
+            "detailTrip":"行程介绍"
+        }
+    }
+}

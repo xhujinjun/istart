@@ -110,6 +110,7 @@
             <scope>test</scope>
             <!-- parent POM declares this dependency in default (compile) scope -->
         </dependency>
+
         <!--  <dependency>
             <groupId>com.mattbertolini</groupId>
             <artifactId>liquibase-slf4j</artifactId>
@@ -143,6 +144,12 @@
                     <groupId>com.sun</groupId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <!-- http://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.2.2</version>
         </dependency>
         <!-- The HikariCP Java Agent is disabled by default, as it is experimental
         <dependency>
